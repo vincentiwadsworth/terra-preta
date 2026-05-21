@@ -1,37 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSection from "../components/sections/HeroSection.astro";
+import OriginSection from "../components/sections/OriginSection.astro";
+import CertificationsSection from "../components/sections/CertificationsSection.astro";
+import ProductSection from "../components/sections/ProductSection.astro";
+import ExportSection from "../components/sections/ExportSection.astro";
+import SocialProofSection from "../components/sections/SocialProofSection.astro";
+import ContactSection from "../components/sections/ContactSection.astro";
 ---
 
-<BaseLayout title="Home">
-  <section id="hero" class="min-h-dvh flex items-center justify-center bg-forest-green text-cream">
-    <div class="text-center px-4">
-      <h1 class="text-4xl md:text-6xl font-bold text-balance">
-        Terra Preta
-      </h1>
-      <p class="mt-4 text-lg text-cream/80 text-balance max-w-2xl mx-auto">
-        Premium freeze-dried açaí powder from the Bolivian Amazon.
-        USDA NOP and EU Organic certified.
-      </p>
-    </div>
-  </section>
-
-  <!-- Placeholder sections for nav anchor verification -->
-  <section id="origin" class="min-h-64 flex items-center justify-center section-padding">
-    <p class="text-muted">Origin section — coming in PR#3</p>
-  </section>
-  <section id="certifications" class="min-h-64 flex items-center justify-center section-padding-sm bg-surface">
-    <p class="text-muted">Certifications section — coming in PR#3</p>
-  </section>
-  <section id="product" class="min-h-64 flex items-center justify-center section-padding">
-    <p class="text-muted">Product section — coming in PR#3</p>
-  </section>
-  <section id="export" class="min-h-64 flex items-center justify-center section-padding-sm bg-surface">
-    <p class="text-muted">Export section — coming in PR#3</p>
-  </section>
-  <section id="social-proof" class="min-h-64 flex items-center justify-center section-padding bg-surface">
-    <p class="text-muted">Social proof section — coming in PR#3</p>
-  </section>
-  <section id="contact" class="min-h-64 flex items-center justify-center section-padding">
-    <p class="text-muted">Contact section — coming in PR#4</p>
-  </section>
+<BaseLayout title="Premium Freeze-Dried Açaí Powder">
+  <HeroSection />
+  <OriginSection />
+  <CertificationsSection />
+  <ProductSection />
+  <ExportSection />
+  <SocialProofSection />
+  <ContactSection />
 </BaseLayout>
