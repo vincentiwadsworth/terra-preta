@@ -1,28 +1,37 @@
 ---
 import { Icon } from "astro-icon/components";
 import Button from "../shared/Button.astro";
-
-const heroBg =
-  "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1920&q=80";
 ---
 
 <section
   id="hero"
   class="relative min-h-dvh flex items-center justify-center overflow-hidden"
 >
-  <!-- Background image -->
-  <img
-    src={heroBg}
-    alt="Aerial view of the Amazon rainforest river — lush green canopy winding through the landscape"
-    class="absolute inset-0 w-full h-full object-cover"
-    loading="eager"
-    decoding="async"
-    fetchpriority="high"
-  />
+  <!-- Background image — responsive WebP with srcset for LCP optimization -->
+  <picture>
+    <source
+      srcset="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&q=80&fm=webp&fit=crop"
+      media="(max-width: 767px)"
+    />
+    <source
+      srcset="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1440&q=80&fm=webp&fit=crop"
+      media="(max-width: 1439px)"
+    />
+    <img
+      src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1920&q=80&fm=webp&fit=crop"
+      alt="Aerial view of the Amazon rainforest river — lush green canopy winding through the landscape"
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+      width="1920"
+      height="1280"
+    />
+  </picture>
 
   <!-- Dark overlay gradient: forest-green → transparent → earth-brown -->
   <div
-    class="absolute inset-0 bg-gradient-to-b from-forest-green/75 via-forest-green/30 to-earth-brown/65"
+    class="absolute inset-0 bg-gradient-to-b from-forest-green/80 via-forest-green/35 to-earth-brown/70"
     aria-hidden="true"
   ></div>
 
@@ -31,7 +40,7 @@ const heroBg =
     <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-cream text-balance leading-tight">
       Amazonian Açaí,<br class="sm:hidden" /> European Standards
     </h1>
-    <p class="mt-6 text-lg md:text-xl text-cream/90 text-balance max-w-3xl mx-auto leading-relaxed">
+    <p class="mt-6 text-lg md:text-xl text-cream text-balance max-w-3xl mx-auto leading-relaxed">
       Premium freeze-dried açaí powder from the Bolivian Amazon. USDA NOP and
       EU Organic certified. Direct from producer to your facility.
     </p>
@@ -49,7 +58,7 @@ const heroBg =
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
     <a
       href="#origin"
-      class="flex flex-col items-center gap-2 text-cream/70 hover:text-cream transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded"
+      class="flex flex-col items-center gap-2 text-cream hover:text-cream/80 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded"
       aria-label="Scroll to Origin section"
     >
       <span class="text-xs uppercase tracking-widest">Scroll</span>

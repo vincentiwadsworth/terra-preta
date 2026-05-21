@@ -4,12 +4,12 @@ import { site } from "../data/site";
 const currentYear = new Date().getFullYear();
 
 const footerLinks = [
-  { label: "Home", href: "#hero" },
-  { label: "Origin", href: "#origin" },
-  { label: "Certifications", href: "#certifications" },
-  { label: "Product", href: "#product" },
-  { label: "Export", href: "#export" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "#hero", aria: "Back to top" },
+  { label: "Origin", href: "#origin", aria: "Origin — footer" },
+  { label: "Certifications", href: "#certifications", aria: "Certifications — footer" },
+  { label: "Product", href: "#product", aria: "Product — footer" },
+  { label: "Export", href: "#export", aria: "Export — footer" },
+  { label: "Contact", href: "#contact", aria: "Contact — footer" },
 ];
 ---
 
@@ -38,6 +38,7 @@ const footerLinks = [
               <li>
                 <a
                   href={link.href}
+                  aria-label={link.aria}
                   class="text-sm text-cream/70 transition-colors hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded"
                 >
                   {link.label}
