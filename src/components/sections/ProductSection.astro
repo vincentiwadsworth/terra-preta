@@ -1,0 +1,121 @@
+---
+import SectionHeading from "../shared/SectionHeading.astro";
+import { product } from "../../data/products";
+---
+
+<section id="product" class="section-padding bg-background">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <SectionHeading
+      title="Star Product: Freeze-Dried Açaí Powder"
+      subtitle="Euterpe precatoria — wild-harvested, organic, freeze-dried to preserve its extraordinary nutritional profile."
+    />
+
+    <!-- Product description -->
+    <p class="max-w-3xl mx-auto text-center text-on-background/80 leading-relaxed mb-12">
+      {product.description}
+    </p>
+
+    <!-- ORAC highlight -->
+    <div class="max-w-sm mx-auto text-center mb-14 p-6 rounded-lg bg-forest-green/5 border border-forest-green/10">
+      <p class="text-sm uppercase tracking-widest text-forest-green/70 mb-1">
+        Antioxidant Power
+      </p>
+      <p class="text-4xl md:text-5xl font-bold text-forest-green tabular-nums">
+        {product.oracTotal.toLocaleString("en-US")}
+      </p>
+      <p class="text-sm text-forest-green/80 mt-1">{product.oracUnit}</p>
+    </div>
+
+    <!-- Nutrition facts grid -->
+    <h3 class="text-xl font-semibold text-on-background text-center mb-6 text-balance">
+      Nutritional Profile (per 100g)
+    </h3>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
+      {product.nutritionFacts.map((fact) => (
+        <div class="bg-cream rounded-lg p-4 text-center border border-sand/20">
+          <p class="text-2xl font-bold text-forest-green tabular-nums">
+            {fact.value}
+          </p>
+          <p class="text-sm text-on-background/80 mt-1 text-balance leading-tight">
+            {fact.label}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Particle size -->
+    <h3 class="text-xl font-semibold text-on-background text-center mb-6 text-balance">
+      Particle Size Distribution
+    </h3>
+    <div class="overflow-x-auto mb-12">
+      <table class="mx-auto text-sm text-left border-collapse">
+        <caption class="sr-only">
+          Particle size distribution by mesh and micron
+        </caption>
+        <thead>
+          <tr class="border-b border-sand">
+            <th scope="col" class="px-4 py-2 font-medium text-muted">
+              Mesh
+            </th>
+            <th scope="col" class="px-4 py-2 font-medium text-muted">
+              Microns
+            </th>
+            <th scope="col" class="px-4 py-2 font-medium text-muted">
+              Pass Rate
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {product.particleSize.map((ps) => (
+            <tr class="border-b border-sand/40">
+              <td class="px-4 py-2 tabular-nums">#{ps.mesh}</td>
+              <td class="px-4 py-2 tabular-nums">{ps.microns} µm</td>
+              <td class="px-4 py-2 tabular-nums">{ps.percentage}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Product characteristics -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Packaging -->
+      <div class="bg-cream rounded-lg p-5 border border-sand/20">
+        <h4 class="font-semibold text-on-background mb-3">Packaging</h4>
+        <ul class="space-y-2 text-sm text-on-background/80">
+          {product.packaging.map((pkg) => (
+            <li>
+              <strong>{pkg.type}:</strong> {pkg.detail}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Shelf life -->
+      <div class="bg-cream rounded-lg p-5 border border-sand/20">
+        <h4 class="font-semibold text-on-background mb-3">
+          Shelf Life &amp; Storage
+        </h4>
+        <p class="text-sm text-on-background/80">{product.shelfLife}</p>
+        <p class="text-sm text-on-background/80 mt-2">
+          {product.storageConditions}
+        </p>
+      </div>
+
+      <!-- Certifications -->
+      <div class="bg-cream rounded-lg p-5 border border-sand/20">
+        <h4 class="font-semibold text-on-background mb-3">
+          Certifications
+        </h4>
+        <ul class="space-y-1.5 text-sm text-on-background/80">
+          {product.certifications.map((cert) => (
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-forest-green flex-shrink-0" aria-hidden="true"></span>
+              {cert}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

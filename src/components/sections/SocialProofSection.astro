@@ -1,0 +1,67 @@
+---
+import { Icon } from "astro-icon/components";
+import SectionHeading from "../shared/SectionHeading.astro";
+
+// Placeholder for future testimonials and buyer logos.
+// When partners come on board, add objects with: name, role, company, quote, logoUrl
+const testimonials: {
+  name: string;
+  role: string;
+  company: string;
+  quote: string;
+  logoUrl?: string;
+}[] = [];
+---
+
+<section id="social-proof" class="section-padding bg-background">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <SectionHeading
+      title="Trusted by Industry Leaders"
+      subtitle="placeholder for future testimonials and buyer logos"
+    />
+
+    {
+      testimonials.length > 0 ? (
+        /* When testimonials exist, render them here */
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {testimonials.map((t) => (
+            <blockquote class="bg-cream rounded-lg p-6 border border-sand/20">
+              <p class="text-on-background/80 italic leading-relaxed">
+                &ldquo;{t.quote}&rdquo;
+              </p>
+              <footer class="mt-4">
+                <cite class="not-italic font-semibold text-on-background text-sm block">
+                  {t.name}
+                </cite>
+                <span class="text-muted text-sm">
+                  {t.role}, {t.company}
+                </span>
+              </footer>
+            </blockquote>
+          ))}
+        </div>
+      ) : (
+        /* Graceful fallback — no testimonials yet (LP-6) */
+        <div class="max-w-2xl mx-auto">
+          <div class="text-center p-8 sm:p-12 rounded-lg border border-dashed border-sand bg-cream/50">
+            <div class="w-14 h-14 mx-auto flex items-center justify-center rounded-full bg-forest-green/10 text-forest-green mb-5">
+              <Icon
+                name="material-symbols:groups"
+                class="w-8 h-8"
+                aria-hidden="true"
+              />
+            </div>
+            <h3 class="text-lg font-semibold text-on-background mb-3 text-balance">
+              Partners Coming Soon
+            </h3>
+            <p class="text-on-background/70 leading-relaxed text-balance max-w-md mx-auto">
+              Terra Preta is a new venture built on decades of Amazonian
+              expertise. As our first European partners come on board, their
+              stories will appear here.
+            </p>
+          </div>
+        </div>
+      )
+    }
+  </div>
+</section>

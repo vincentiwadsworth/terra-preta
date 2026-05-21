@@ -1,0 +1,85 @@
+---
+import SectionHeading from "../shared/SectionHeading.astro";
+import { product } from "../../data/products";
+---
+
+<section id="origin" class="section-padding bg-cream">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <SectionHeading
+      title="From the Amazon to Your Facility"
+      subtitle="Harvested, processed, and exported in under 100 hours — preserving nature's intent at every step."
+    />
+
+    <!-- Two-column layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Left: Narrative text -->
+      <div class="space-y-6">
+        <p class="text-lg text-on-background/80 leading-relaxed text-balance">
+          Our açaí is harvested by indigenous communities in the Bolivian
+          Amazon. The fruit is transformed into puree within 24 hours of
+          harvest, then freeze-dried into powder in under 100 hours —
+          preserving maximum nutritional integrity.
+        </p>
+        <p class="text-on-background/70 leading-relaxed">
+          The wild-harvested <em>Euterpe precatoria</em> palm produces a
+          smaller, more nutrient-dense berry than its cultivated Brazilian
+          cousin. Growing in the biodiverse floodplains of the Beni region,
+          these palms absorb the richness of Amazonian soil — the original
+          <em>terra preta</em> that gives our company its name.
+        </p>
+      </div>
+
+      <!-- Right: Map/image placeholder with data overlay -->
+      <div class="relative">
+        <div
+          class="aspect-[4/3] bg-sand rounded-lg flex items-center justify-center border border-sand/50"
+          aria-label="Map of Bolivia's Beni region — sourcing area"
+          role="img"
+        >
+          <div class="text-center text-on-background/30">
+            <svg
+              class="w-16 h-16 mx-auto mb-3 opacity-40"
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+            </svg>
+            <p class="text-sm">Beni Region, Bolivia</p>
+            <p class="text-xs mt-1 text-on-background/20">Map placeholder</p>
+          </div>
+        </div>
+
+        <!-- Stats overlay -->
+        <div class="mt-8 grid grid-cols-3 gap-4 text-center">
+          <div>
+            <p class="text-3xl md:text-4xl font-bold text-forest-green tabular-nums">
+              &lt;100<span class="text-lg">h</span>
+            </p>
+            <p class="mt-1 text-sm text-on-background/70 text-balance leading-tight">
+              From harvest to powder
+            </p>
+          </div>
+          <div>
+            <p class="text-3xl md:text-4xl font-bold text-forest-green tabular-nums">
+              1,850<span class="text-lg">g</span>
+            </p>
+            <p class="mt-1 text-sm text-on-background/70 text-balance leading-tight">
+              Raw fruit = 100g powder
+            </p>
+          </div>
+          <div>
+            <p class="text-3xl md:text-4xl font-bold text-forest-green tabular-nums">
+              {product.oracTotal.toLocaleString("en-US")}
+            </p>
+            <p class="mt-1 text-sm text-on-background/70 text-balance leading-tight">
+              ORAC µmol TE/100g
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

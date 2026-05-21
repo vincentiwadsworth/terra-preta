@@ -1,0 +1,96 @@
+---
+import { Icon } from "astro-icon/components";
+import SectionHeading from "../shared/SectionHeading.astro";
+import { certifications } from "../../data/certifications";
+
+const certIcons: Record<string, string> = {
+  "USDA NOP Organic": "verified",
+  "EU Organic": "eco",
+  "Bolivia National Organic": "verified",
+};
+---
+
+<section id="certifications" class="section-padding bg-forest-green text-cream">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <SectionHeading
+      inverted
+      title="Certified Organic, Verified Transparent"
+      subtitle="Every shipment is backed by third-party certification. No middlemen, no claims without proof."
+    />
+
+    <!-- Three certification cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      {
+        certifications.map((cert) => {
+          const iconName = certIcons[cert.name] || "verified";
+          return (
+            <div
+              class="bg-cream text-on-background rounded-lg p-6 sm:p-8 flex flex-col border border-cream/20 shadow-md hover:shadow-lg transition-shadow"
+            >
+              <!-- Icon badge -->
+              <div class="w-12 h-12 flex items-center justify-center rounded-full bg-forest-green/10 text-forest-green mb-4">
+                <Icon
+                  name={`material-symbols:${iconName}`}
+                  class="w-7 h-7"
+                  aria-hidden="true"
+                />
+              </div>
+
+              <!-- Certification name -->
+              <h3 class="text-lg font-semibold text-on-background">
+                {cert.badgeText}
+              </h3>
+
+              <!-- Details -->
+              <dl class="mt-4 space-y-2 text-sm flex-1">
+                <div>
+                  <dt class="text-muted text-xs uppercase tracking-wide">
+                    Authority
+                  </dt>
+                  <dd class="text-on-background/80">{cert.authority}</dd>
+                </div>
+                <div>
+                  <dt class="text-muted text-xs uppercase tracking-wide">ID</dt>
+                  <dd class="text-on-background/80 font-mono tabular-nums">
+                    {cert.id}
+                  </dd>
+                </div>
+                {cert.validUntil && (
+                  <div>
+                    <dt class="text-muted text-xs uppercase tracking-wide">
+                      Valid Until
+                    </dt>
+                    <dd class="text-on-background/80 tabular-nums">
+                      {new Date(cert.validUntil).toLocaleDateString("en-GB", {
+                        day: "2-digit",
+                        month: "2-digit",
+                        year: "numeric",
+                      })}
+                    </dd>
+                  </div>
+                )}
+              </dl>
+
+              <!-- Verify link -->
+              {cert.verificationUrl && (
+                <a
+                  href={cert.verificationUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-forest-green hover:text-forest-green/80 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded min-h-[44px]"
+                >
+                  Verify online
+                  <Icon
+                    name="material-symbols:open-in-new"
+                    class="w-4 h-4"
+                    aria-hidden="true"
+                  />
+                </a>
+              )}
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,60 @@
+---
+import { Icon } from "astro-icon/components";
+import SectionHeading from "../shared/SectionHeading.astro";
+import Button from "../shared/Button.astro";
+
+const exportColumns = [
+  {
+    icon: "check-circle",
+    heading: "EU Certified",
+    body: "Our açaí meets EU Organic Regulation 2018/848. CN code 0813. Ready for import into all EU member states.",
+  },
+  {
+    icon: "local-shipping",
+    heading: "Flexible Orders",
+    body: "No minimum order quantity. Inquire about seasonal stock availability and current pricing. We work with your volume needs.",
+  },
+  {
+    icon: "factory",
+    heading: "Direct from Source",
+    body: "We coordinate directly with our producer partner BioFood SRL in Santa Cruz, Bolivia. Transparent supply chain, verified quality.",
+  },
+];
+---
+
+<section id="export" class="section-padding bg-sand">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <SectionHeading
+      title="Export-Ready for Europe"
+      subtitle="We handle logistics so you don't have to."
+    />
+
+    <!-- Three-column layout -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 mb-12">
+      {exportColumns.map((col) => (
+        <div class="text-center">
+          <div class="w-14 h-14 mx-auto flex items-center justify-center rounded-full bg-forest-green/10 text-forest-green mb-5">
+            <Icon
+              name={`material-symbols:${col.icon}`}
+              class="w-8 h-8"
+              aria-hidden="true"
+            />
+          </div>
+          <h3 class="text-lg font-semibold text-on-background mb-3 text-balance">
+            {col.heading}
+          </h3>
+          <p class="text-on-background/75 leading-relaxed text-balance">
+            {col.body}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center">
+      <Button href="#contact" variant="primary" size="lg">
+        Inquire About Stock &amp; Pricing
+      </Button>
+    </div>
+  </div>
+</section>

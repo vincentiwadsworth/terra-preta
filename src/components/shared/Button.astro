@@ -1,7 +1,7 @@
 ---
 export interface Props {
   href: string;
-  variant?: "primary" | "secondary" | "outline";
+  variant?: "primary" | "secondary" | "outline" | "outline-light";
   size?: "default" | "lg";
   external?: boolean;
 }
@@ -23,6 +23,8 @@ const variantClasses: Record<string, string> = {
     "bg-acai-purple text-cream hover:bg-acai-purple/90 shadow-md",
   outline:
     "border-2 border-forest-green text-forest-green bg-transparent hover:bg-forest-green hover:text-cream",
+  "outline-light":
+    "border-2 border-cream text-cream bg-transparent hover:bg-cream/10",
 };
 
 const sizeClasses: Record<string, string> = {
