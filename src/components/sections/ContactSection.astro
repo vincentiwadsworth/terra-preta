@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import SectionHeading from "../shared/SectionHeading.astro";
 import Button from "../shared/Button.astro";
 import { site } from "../../data/site";
@@ -11,120 +12,73 @@ import { site } from "../../data/site";
       subtitle="Inquire about seasonal stock, request samples, or discuss your requirements."
     />
 
-    <div class="mt-12 grid gap-12 lg:grid-cols-2">
-      <!-- Left: Contact Form -->
-      <div>
-        <form
-          action="https://formspree.io/f/xabcdefg"
-          method="POST"
-          class="space-y-6"
-        >
-          <div>
-            <label for="name" class="mb-2 block text-sm font-medium text-earth-brown">
-              Name <span aria-hidden="true">*</span>
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              autocomplete="name"
-              class="w-full rounded-lg border border-sand bg-cream px-4 py-3 text-earth-brown placeholder:text-earth-brown/50 focus:border-acai-purple focus:outline-none focus:ring-2 focus:ring-acai-purple/30"
-              placeholder="Your full name"
-            />
-          </div>
-
-          <div>
-            <label for="email" class="mb-2 block text-sm font-medium text-earth-brown">
-              Email <span aria-hidden="true">*</span>
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              autocomplete="email"
-              class="w-full rounded-lg border border-sand bg-cream px-4 py-3 text-earth-brown placeholder:text-earth-brown/50 focus:border-acai-purple focus:outline-none focus:ring-2 focus:ring-acai-purple/30"
-              placeholder="you@company.com"
-            />
-          </div>
-
-          <div>
-            <label for="company" class="mb-2 block text-sm font-medium text-earth-brown">
-              Company
-            </label>
-            <input
-              type="text"
-              id="company"
-              name="company"
-              autocomplete="organization"
-              class="w-full rounded-lg border border-sand bg-cream px-4 py-3 text-earth-brown placeholder:text-earth-brown/50 focus:border-acai-purple focus:outline-none focus:ring-2 focus:ring-acai-purple/30"
-              placeholder="Your company name"
-            />
-          </div>
-
-          <div>
-            <label for="message" class="mb-2 block text-sm font-medium text-earth-brown">
-              Message <span aria-hidden="true">*</span>
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              rows="5"
-              class="w-full rounded-lg border border-sand bg-cream px-4 py-3 text-earth-brown placeholder:text-earth-brown/50 focus:border-acai-purple focus:outline-none focus:ring-2 focus:ring-acai-purple/30"
-              placeholder="Tell us about your interest in açaí powder..."
-            ></textarea>
-          </div>
-
-          <div>
-            <Button href="#" variant="primary" size="lg">
-              Send Inquiry
-            </Button>
-          </div>
-
-          <noscript>
-            <p class="text-sm text-earth-brown/70">
-              JavaScript is not required. The form will open in a new page.
-            </p>
-          </noscript>
-        </form>
-      </div>
-
-      <!-- Right: Direct Contact -->
-      <div class="space-y-8 lg:pl-8">
-        <div class="rounded-xl border border-sand/60 bg-cream p-6">
-          <h3 class="mb-4 font-semibold text-forest-green text-lg">Prefer a direct conversation?</h3>
-
-          <div class="space-y-4">
-            <a
-              href={`https://wa.me/${site.whatsappNumber.replace(/\+/g, "")}`}
-              class="flex items-center gap-3 rounded-lg bg-[#25D366] px-5 py-3 text-white transition-colors hover:bg-[#1fb855] focus-visible:outline-2 focus-visible:outline-acai-purple"
-              aria-label="Chat with us on WhatsApp"
-            >
-              <span class="text-2xl" aria-hidden="true">📱</span>
-              <span class="font-medium">Chat on WhatsApp</span>
-            </a>
-
-            <a
-              href={`mailto:${site.contactEmail}`}
-              class="flex items-center gap-3 rounded-lg border border-sand bg-white px-5 py-3 text-earth-brown transition-colors hover:border-forest-green hover:bg-cream focus-visible:outline-2 focus-visible:outline-acai-purple"
-              aria-label="Send us an email"
-            >
-              <span class="text-2xl" aria-hidden="true">✉️</span>
-              <span class="font-medium">{site.contactEmail}</span>
-            </a>
-
-            <div class="flex items-center gap-3 rounded-lg border border-sand bg-white px-5 py-3 text-earth-brown">
-              <span class="text-2xl" aria-hidden="true">📍</span>
-              <span>Santa Cruz de la Sierra, Bolivia</span>
-            </div>
-          </div>
-
-          <p class="mt-4 text-sm text-earth-brown/70">
-            We typically respond within 24 hours.
-          </p>
+    <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
+      <!-- WhatsApp -->
+      <a
+        href={`https://wa.me/${site.whatsappNumber.replace(/\+/g, "")}`}
+        class="group flex flex-col items-center gap-4 rounded-xl border border-sand/60 bg-cream p-8 text-center transition-shadow hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+        aria-label="Chat with Carlos on WhatsApp"
+      >
+        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-[#25D366]/10 text-[#25D366] group-hover:bg-[#25D366]/20 transition-colors">
+          <Icon name="material-symbols:call" class="w-7 h-7" aria-hidden="true" />
         </div>
+        <div>
+          <p class="font-semibold text-on-background">WhatsApp</p>
+          <p class="mt-1 text-sm text-on-background/70">Carlos Gómez</p>
+          <p class="text-sm text-on-background/60 tabular-nums">+591 7164 1050</p>
+        </div>
+      </a>
+
+      <!-- Email -->
+      <a
+        href={`mailto:${site.contactEmail}`}
+        class="group flex flex-col items-center gap-4 rounded-xl border border-sand/60 bg-cream p-8 text-center transition-shadow hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+        aria-label="Send us an email"
+      >
+        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-acai-purple/10 text-acai-purple group-hover:bg-acai-purple/20 transition-colors">
+          <Icon name="material-symbols:mail" class="w-7 h-7" aria-hidden="true" />
+        </div>
+        <div>
+          <p class="font-semibold text-on-background">Email</p>
+          <p class="mt-1 text-sm text-on-background/70">{site.contactEmail}</p>
+        </div>
+      </a>
+
+      <!-- Location -->
+      <div
+        class="flex flex-col items-center gap-4 rounded-xl border border-sand/60 bg-cream p-8 text-center"
+      >
+        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-forest-green/10 text-forest-green">
+          <Icon name="material-symbols:location-on" class="w-7 h-7" aria-hidden="true" />
+        </div>
+        <div>
+          <p class="font-semibold text-on-background">Location</p>
+          <p class="mt-1 text-sm text-on-background/70">Santa Cruz de la Sierra</p>
+          <p class="text-sm text-on-background/60">Bolivia</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Response time + downloadable docs -->
+    <div class="mt-10 text-center space-y-4">
+      <p class="text-sm text-on-background/60">
+        We typically respond within 24 hours.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+        <a
+          href="/FT%20FREEZE%20DRIED%20ORGANIC%20ACAI%20POWDER.pdf"
+          class="inline-flex items-center gap-2 rounded-lg border border-forest-green/20 bg-cream px-5 py-2.5 text-sm font-medium text-forest-green transition-colors hover:bg-forest-green hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent min-h-[44px]"
+        >
+          <Icon name="material-symbols:download" class="w-5 h-5" aria-hidden="true" />
+          Product Datasheet (PDF)
+        </a>
+        <a
+          href="/Certificate_NOP_BIOFOOD_4080209399.pdf"
+          class="inline-flex items-center gap-2 rounded-lg border border-acai-purple/20 bg-cream px-5 py-2.5 text-sm font-medium text-acai-purple transition-colors hover:bg-acai-purple hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent min-h-[44px]"
+        >
+          <Icon name="material-symbols:verified" class="w-5 h-5" aria-hidden="true" />
+          USDA NOP Certificate (PDF)
+        </a>
       </div>
     </div>
   </div>
