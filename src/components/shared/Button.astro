@@ -1,0 +1,43 @@
+---
+export interface Props {
+  href: string;
+  variant?: "primary" | "secondary" | "outline";
+  size?: "default" | "lg";
+  external?: boolean;
+}
+
+const {
+  href,
+  variant = "primary",
+  size = "default",
+  external = false,
+} = Astro.props;
+
+const baseClasses =
+  "inline-flex items-center justify-center font-medium rounded-md transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent min-h-[44px] min-w-[44px]";
+
+const variantClasses: Record<string, string> = {
+  primary:
+    "bg-forest-green text-cream hover:bg-forest-green/90 shadow-md",
+  secondary:
+    "bg-acai-purple text-cream hover:bg-acai-purple/90 shadow-md",
+  outline:
+    "border-2 border-forest-green text-forest-green bg-transparent hover:bg-forest-green hover:text-cream",
+};
+
+const sizeClasses: Record<string, string> = {
+  default: "px-5 py-2.5 text-sm",
+  lg: "px-8 py-3.5 text-base",
+};
+
+const classList = [baseClasses, variantClasses[variant], sizeClasses[size]].join(" ");
+---
+
+<a
+  href={href}
+  class={classList}
+  rel={external ? "noopener noreferrer" : undefined}
+  target={external ? "_blank" : undefined}
+>
+  <slot />
+</a>

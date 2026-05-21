@@ -1,0 +1,92 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import SkipLink from "../components/shared/SkipLink.astro";
+import { site as siteData } from "../data/site";
+import "../styles/global.css";
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = siteData.description } = Astro.props;
+// Ensure trailing slash for correct relative-URL resolution on GitHub Pages
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const pageTitle = `${title} — ${siteData.companyName}`;
+const ogImage = `${baseUrl}og-default.png`;
+---
+
+<!doctype html>
+<html lang="en" class="font-sans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Base URL for GitHub Pages subpath — MUST have trailing slash -->
+    <base href={baseUrl} />
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content={siteData.companyName} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon.svg`} />
+    <link rel="icon" type="image/x-icon" href={`${baseUrl}favicon.ico`} />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": {JSON.stringify(siteData.companyName)},
+        "url": {JSON.stringify(Astro.site.href)},
+        "description": {JSON.stringify(siteData.description)},
+        "sameAs": [
+          {siteData.socialLinks.linkedin && JSON.stringify(siteData.socialLinks.linkedin)},
+          {siteData.socialLinks.instagram && JSON.stringify(siteData.socialLinks.instagram)}
+        ].filter(Boolean)
+      }
+    </script>
+  </head>
+
+  <body class="flex min-h-dvh flex-col bg-background text-on-background font-sans antialiased">
+    <!-- Skip link: first focusable element for keyboard users -->
+    <SkipLink />
+
+    <Header />
+
+    <main id="main-content" class="flex-1">
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  /* Offset all section targets below sticky header */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  /* Ensure ::selection has brand-appropriate styling */
+  ::selection {
+    background-color: var(--color-forest-green);
+    color: var(--color-cream);
+  }
+</style>
