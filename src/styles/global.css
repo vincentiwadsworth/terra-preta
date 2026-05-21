@@ -113,8 +113,10 @@
   }
 }
 
+/* Using a plain CSS class (not @utility) because @utility cannot be nested
+   inside @supports in Tailwind v4. Applied via class="scroll-reveal" in Astro. */
 @supports (animation-timeline: view()) {
-  @utility scroll-reveal {
+  .scroll-reveal {
     animation: reveal linear both;
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
