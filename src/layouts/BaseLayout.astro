@@ -75,6 +75,54 @@ const ogImage = `${baseUrl}og-default.png`;
     </main>
 
     <Footer />
+
+    <!-- Magnetic cursor: decorative, progressive enhancement -->
+    <div id="magnetic-cursor" aria-hidden="true" style="position:fixed;z-index:9999;top:0;left:0;width:20px;height:20px;border-radius:50%;background:var(--color-cream);mix-blend-mode:difference;will-change:transform;pointer-events:none;display:none"></div>
+
+    <script>
+      (function () {
+        if (!matchMedia('(hover: hover)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        var cursor = document.getElementById('magnetic-cursor');
+        if (!cursor) return;
+        cursor.style.display = 'block';
+
+        var mx = 0, my = 0, cx = 0, cy = 0, scale = 1;
+
+        document.addEventListener('mousemove', function (e) {
+          mx = e.clientX;
+          my = e.clientY;
+        });
+
+        var selectors = 'a, button, [role="button"], summary, input, textarea, select';
+        var targets = document.querySelectorAll(selectors);
+
+        targets.forEach(function (el) {
+          el.addEventListener('mouseenter', function () { scale = 1.5; });
+          el.addEventListener('mouseleave', function () { scale = 1; });
+        });
+
+        new MutationObserver(function (mutations) {
+          mutations.forEach(function (m) {
+            m.addedNodes.forEach(function (node) {
+              if (node.nodeType === 1 && node.matches && node.matches(selectors)) {
+                node.addEventListener('mouseenter', function () { scale = 1.5; });
+                node.addEventListener('mouseleave', function () { scale = 1; });
+              }
+            });
+          });
+        }).observe(document.body, { childList: true, subtree: true });
+
+        (function loop() {
+          cx += (mx - cx) * 0.15;
+          cy += (my - cy) * 0.15;
+          cursor.style.left = cx + 'px';
+          cursor.style.top = cy + 'px';
+          cursor.style.transform = 'translate(-50%, -50%) scale(' + scale + ')';
+          requestAnimationFrame(loop);
+        })();
+      })();
+    </script>
   </body>
 </html>
 
@@ -88,5 +136,10 @@ const ogImage = `${baseUrl}og-default.png`;
   ::selection {
     background-color: var(--color-forest-green);
     color: var(--color-cream);
+  }
+
+  /* Hide native cursor only when magnetic cursor is confirmed active */
+  body:has(#magnetic-cursor[style*="display: block"]) {
+    cursor: none;
   }
 </style>
