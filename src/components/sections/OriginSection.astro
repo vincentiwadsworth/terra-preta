@@ -1,5 +1,6 @@
 ---
 import SectionHeading from "../shared/SectionHeading.astro";
+import MapEmbed from "../shared/MapEmbed.astro";
 import { product } from "../../data/products";
 ---
 
@@ -29,28 +30,13 @@ import { product } from "../../data/products";
         </p>
       </div>
 
-      <!-- Right: Sourcing location with data overlay -->
+      <!-- Right: Interactive sourcing map + stats -->
       <div class="relative">
-        <div
-          class="aspect-[4/3] bg-forest-green/5 rounded-lg flex flex-col items-center justify-center border border-forest-green/10 p-6"
-          aria-label="Sourcing region: Riberalta, Beni, Bolivia"
-          role="img"
-        >
-          <svg
-            class="w-12 h-12 mb-3 text-forest-green/40"
-            aria-hidden="true"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            viewBox="0 0 24 24"
-          >
-            <path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-            <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-          </svg>
-          <p class="text-lg font-semibold text-forest-green">Riberalta, Beni</p>
-          <p class="text-sm text-on-background/60 mt-1">Bolivian Amazon — 11°.0′S, 66°.1′W</p>
-          <p class="text-xs text-on-background/40 mt-3">Comunidad Buen Retiro · Luz de América · El Porvenir</p>
-        </div>
+        <MapEmbed />
+
+        <p class="mt-2 text-xs text-on-background/40 text-center">
+          Comunidad Buen Retiro · Luz de América · El Porvenir — Riberalta, Beni, Bolivia
+        </p>
 
         <!-- Stats overlay -->
         <div class="mt-8 grid grid-cols-3 gap-4 text-center">
