@@ -4,6 +4,7 @@ export interface Props {
   variant?: "primary" | "secondary" | "outline" | "outline-light";
   size?: "default" | "lg";
   external?: boolean;
+  umamiEvent?: string;
 }
 
 const {
@@ -11,6 +12,7 @@ const {
   variant = "primary",
   size = "default",
   external = false,
+  umamiEvent,
 } = Astro.props;
 
 const baseClasses =
@@ -41,6 +43,7 @@ const classList = [baseClasses, variantClasses[variant], sizeClasses[size]].join
   style="transition: transform 0.2s var(--ease-spring), box-shadow 0.2s ease, background-color 0.15s ease, color 0.15s ease;"
   rel={external ? "noopener noreferrer" : undefined}
   target={external ? "_blank" : undefined}
+  onclick={umamiEvent ? `umami.track('${umamiEvent}')` : undefined}
 >
   <slot />
 </a>
