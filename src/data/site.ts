@@ -14,7 +14,7 @@ export const site: SiteMetadata = {
   companyName: "Terra Preta",
   tagline: "Amazonian superfoods, exported with integrity.",
   description:
-    "Terra Preta exports premium freeze-dried açaí powder from the Bolivian Amazon. USDA NOP and EU Organic certified. Direct from producer to your facility.",
+    "Terra Preta connects European buyers with certified freeze-dried açaí producers in the Bolivian Amazon. We coordinate harvest-to-export logistics and manage organic certification verification — so you receive compliant, premium açaí powder without navigating complex supply chains. USDA NOP and EU Organic certified.",
   contactEmail: "cgomez@terrapreta.lat",
   whatsappNumber: "+59171641050",
   socialLinks: {},
