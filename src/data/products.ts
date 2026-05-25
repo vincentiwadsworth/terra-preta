@@ -31,7 +31,7 @@ export interface Product {
 
 export const product: Product = {
   name: "Freeze-Dried Açaí Powder",
-  subtitle: "Premium organic açaí from the Bolivian Amazon",
+  subtitle: "Premium organic açaí from the Bolivian Amazon, exported by Terra Preta.",
   description:
     "100% organic freeze-dried açaí powder sourced from wild-harvested Euterpe precatoria palms in the Beni region of Bolivia. Cold-processed within hours of harvest to preserve maximum nutritional integrity, vibrant color, and authentic Amazonian flavor.",
   oracTotal: 125900,
