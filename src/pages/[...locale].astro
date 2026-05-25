@@ -10,7 +10,15 @@ import SocialProofSection from "../components/sections/SocialProofSection.astro"
 import ContactSection from "../components/sections/ContactSection.astro";
 import { useTranslations } from "../i18n/ui";
 
-const locale = "en";
+export function getStaticPaths() {
+  return [
+    { params: { locale: "es" } },
+    { params: { locale: "fr" } },
+    { params: { locale: "de" } },
+  ];
+}
+
+const locale = Astro.currentLocale ?? "en";
 const t = useTranslations(locale);
 ---
 
