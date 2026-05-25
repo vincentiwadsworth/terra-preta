@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "home": "Home",
+    "howWeWork": "How We Work",
+    "product": "Product",
+    "origin": "Origin",
+    "certifications": "Certifications",
+    "export": "Export",
+    "trust": "Trust",
+    "contact": "Contact",
+    "skipToContent": "Skip to content",
+    "menuToggle": "Toggle navigation menu",
+    "logoTagline": "Amazonian Superfoods"
+  },
+  "hero": {
+    "title": "Amazonian Açaí, European Standards",
+    "subtitle": "Terra Preta connects European buyers with certified freeze-dried açaí producers in the Bolivian Amazon. We coordinate harvest-to-export logistics and organic certification verification — so you receive compliant, premium açaí powder without supply chain complexity.",
+    "ctaPrimary": "Inquire About Seasonal Stock",
+    "ctaSecondary": "Download Product Specs",
+    "scrollHint": "Scroll",
+    "scrollAriaLabel": "Scroll to How We Work section",
+    "backgroundAlt": "Aerial view of the Amazon rainforest river — lush green canopy winding through the landscape"
+  },
+  "howWeWork": {
+    "heading": "How Terra Preta Works",
+    "subheading": "From inquiry to shipment — we coordinate every step.",
+    "step1Title": "Your Requirements",
+    "step1Description": "Share your volume, certification needs, and delivery timeline.",
+    "step2Title": "Producer Matching",
+    "step2Description": "We identify competitive certified producers based on seasonal availability.",
+    "step3Title": "Verification & Documentation",
+    "step3Description": "We coordinate certification verification, batch testing, and export paperwork.",
+    "step4Title": "Export & Delivery",
+    "step4Description": "We handle logistics from Bolivia to your European facility."
+  },
+  "origin": {
+    "heading": "From the Amazon to Your Facility",
+    "subheading": "Coordinated from harvest to export in under 100 hours — preserving nature's intent at every step.",
+    "description": "Açaí sourced for Terra Preta is harvested by indigenous communities in the Bolivian Amazon. The fruit is transformed into puree within 24 hours of harvest by certified processing partners, then freeze-dried into powder in under 100 hours — preserving maximum nutritional integrity.",
+    "paragraph2": "The wild-harvested Euterpe precatoria palm produces a smaller, more nutrient-dense berry than its cultivated Brazilian cousin. Growing in the biodiverse floodplains of the Beni region, these palms absorb the richness of Amazonian soil — the original terra preta that gives our company its name.",
+    "mapCaption": "Example sourcing locations: Comunidad Buen Retiro · Luz de América · El Porvenir — Riberalta, Beni, Bolivia",
+    "stat1Label": "From harvest to powder",
+    "stat2Label": "Raw fruit = 100g powder",
+    "stat3Label": "ORAC µmol TE/100g"
+  },
+  "certifications": {
+    "heading": "Certified Organic, Verified Transparent",
+    "subheading": "Every shipment is backed by third-party organic certification. We verify all documentation — no claims without proof.",
+    "note": "Organic certifications are held by our producers and processing partners in Bolivia. Terra Preta coordinates verification and provides all documentation for EU import compliance.",
+    "authorityLabel": "Authority",
+    "idLabel": "ID",
+    "validUntilLabel": "Valid Until",
+    "verifyLinkPrefix": "Verify"
+  },
+  "product": {
+    "heading": "Featured Export: Freeze-Dried Açaí Powder",
+    "subheading": "Euterpe precatoria — wild-harvested, organic, freeze-dried to preserve its extraordinary nutritional profile.",
+    "description": "100% organic freeze-dried açaí powder sourced from wild-harvested Euterpe precatoria palms in the Beni region of Bolivia. Cold-processed within hours of harvest to preserve maximum nutritional integrity, vibrant color, and authentic Amazonian flavor.",
+    "antioxidantLabel": "Antioxidant Power",
+    "oracLabel": "ORAC µmol TE/100g",
+    "nutritionHeading": "Nutritional Profile (per 100g)",
+    "particleHeading": "Particle Size Distribution",
+    "particleCaption": "Particle size distribution by mesh and micron",
+    "meshLabel": "Mesh",
+    "micronsLabel": "Microns",
+    "passRateLabel": "Pass Rate",
+    "packagingHeading": "Packaging",
+    "shelfLifeHeading": "Shelf Life & Storage",
+    "shelfLife": "24 months from production date when stored as directed",
+    "storageConditions": "Cool, dry environment (<25°C, <65% RH). Keep sealed after opening.",
+    "certificationsHeading": "Certifications",
+    "certUSDA": "USDA NOP Organic",
+    "certEU": "EU Organic (Reg. 2018/848)",
+    "certBolivia": "Bolivia National Organic (Ley 3525/06)"
+  },
+  "export": {
+    "heading": "Export-Ready for Europe",
+    "subheading": "We handle logistics so you don't have to.",
+    "column1Heading": "EU Certified",
+    "column1Body": "Açaí sourced by Terra Preta meets EU Organic Regulation 2018/848. CN code 0813. Ready for import into all EU member states.",
+    "column2Heading": "Flexible Orders",
+    "column2Body": "No minimum order quantity. Inquire about seasonal stock availability and current pricing. We work with your volume needs.",
+    "column3Heading": "Source-Verified Quality",
+    "column3Body": "We coordinate with certified producers and processors in Santa Cruz, Bolivia. Producer selection is based on competitive quality and seasonal availability. Full traceability documentation from harvest to export.",
+    "ctaButton": "Inquire About Stock & Pricing"
+  },
+  "socialProof": {
+    "heading": "Trusted by Industry Leaders",
+    "subheading": "Buyer success stories, coming soon.",
+    "fallbackTitle": "Partnerships Coming Soon",
+    "fallbackDescription": "Terra Preta is a new export venture built on decades of Amazonian supply chain and compliance expertise. As our first European partners come on board, their stories will appear here."
+  },
+  "contact": {
+    "heading": "Let's Talk Açaí",
+    "subheading": "Inquire about seasonal stock, request samples, or discuss your requirements.",
+    "whatsapp": "WhatsApp",
+    "whatsappAriaLabel": "Chat with Carlos on WhatsApp",
+    "email": "Email",
+    "emailAriaLabel": "Send us an email",
+    "location": "Location",
+    "contactName": "Carlos Gómez",
+    "locationCity": "Santa Cruz de la Sierra",
+    "locationCountry": "Bolivia",
+    "responseTime": "We typically respond within 24 hours.",
+    "downloadDatasheet": "Product Datasheet (PDF)",
+    "downloadCertificate": "USDA NOP Certificate (PDF)"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "whatsapp": "WhatsApp",
+    "location": "Santa Cruz de la Sierra, Bolivia",
+    "copyright": "All rights reserved.",
+    "copyrightCert": "USDA NOP and EU Organic Certified.",
+    "locationLine": "Terra Preta — Export coordination. Santa Cruz de la Sierra, Bolivia."
+  },
+  "meta": {
+    "siteName": "Terra Preta",
+    "titleSuffix": "Premium Freeze-Dried Açaí Powder",
+    "defaultDescription": "Terra Preta connects European buyers with certified freeze-dried açaí producers in the Bolivian Amazon. We coordinate harvest-to-export logistics and manage organic certification verification — so you receive compliant, premium açaí powder without navigating complex supply chains. USDA NOP and EU Organic certified.",
+    "ogTitle": "Premium Freeze-Dried Açaí Powder — Terra Preta"
+  }
+}
