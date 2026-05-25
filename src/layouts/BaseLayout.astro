@@ -3,24 +3,51 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import SkipLink from "../components/shared/SkipLink.astro";
 import { site as siteData } from "../data/site";
+import { getAbsoluteLocaleUrl } from "astro:i18n";
+import type { Translations } from "../i18n/ui";
 import "../styles/global.css";
 
 export interface Props {
-  title: string;
+  title?: string;
   description?: string;
+  locale: string;
+  t: Translations;
 }
 
-const { title, description = siteData.description } = Astro.props;
+const { title, description, locale, t } = Astro.props;
 // Ensure trailing slash for correct relative-URL resolution on GitHub Pages
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
-const pageTitle = `${title} — ${siteData.companyName}`;
+
+const pageTitle = title
+  ? `${title} — ${siteData.companyName}`
+  : t.meta.ogTitle;
+
+const metaDescription = description ?? t.meta.defaultDescription;
+
 const ogImage = `${baseUrl}og-default.png`;
+const locales = ["en", "es", "fr", "de"];
+const canonicalUrl = getAbsoluteLocaleUrl(locale);
+
+const sameAs = [
+  siteData.socialLinks.linkedin,
+  siteData.socialLinks.instagram,
+].filter(Boolean);
+
+const ldJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: siteData.companyName,
+  url: canonicalUrl,
+  description: metaDescription,
+  inLanguage: locale,
+  ...(sameAs.length > 0 ? { sameAs } : {}),
+});
 ---
 
 <!doctype html>
-<html lang="en" class="font-sans">
+<html lang={locale} class="font-sans">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,55 +56,51 @@ const ogImage = `${baseUrl}og-default.png`;
     <base href={baseUrl} />
 
     <title>{pageTitle}</title>
-    <meta name="description" content={description} />
+    <meta name="description" content={metaDescription} />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={description} />
+    <!-- hreflang: reciprocal links for all locales + x-default -->
+    {locales.map((l) => (
+      <link rel="alternate" hreflang={l} href={getAbsoluteLocaleUrl(l)} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={getAbsoluteLocaleUrl("en")} />
+
+    <!-- Canonical: self-referencing per locale -->
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph (translated) -->
+    <meta property="og:title" content={t.meta.ogTitle} />
+    <meta property="og:description" content={metaDescription} />
     <meta property="og:type" content="website" />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:site_name" content={siteData.companyName} />
+    <meta property="og:site_name" content={t.meta.siteName} />
 
-    <!-- Twitter Card -->
+    <!-- Twitter Card (translated) -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={t.meta.ogTitle} />
+    <meta name="twitter:description" content={metaDescription} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon.svg`} />
     <link rel="icon" type="image/x-icon" href={`${baseUrl}favicon.ico`} />
 
-    <!-- Canonical -->
-    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
-
     <!-- Umami Analytics -->
     <script defer src="https://estadisticas.srv1406344.hstgr.cloud/script.js" data-website-id="0494d672-1971-4ca1-8f98-db15072d90bf"></script>
 
-    <!-- Structured Data: Organization -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": {JSON.stringify(siteData.companyName)},
-        "url": {JSON.stringify(Astro.site.href)},
-        "description": {JSON.stringify(siteData.description)},
-        "sameAs": [
-          {siteData.socialLinks.linkedin && JSON.stringify(siteData.socialLinks.linkedin)},
-          {siteData.socialLinks.instagram && JSON.stringify(siteData.socialLinks.instagram)}
-        ].filter(Boolean)
-      }
-    </script>
+    <!-- Structured Data: Organization (locale-aware) -->
+    <script type="application/ld+json" set:html={ldJson}></script>
   </head>
 
   <body class="flex min-h-dvh flex-col bg-background text-on-background font-sans antialiased">
     <!-- Skip link: first focusable element for keyboard users -->
-    <SkipLink />
+    <SkipLink t={t} />
 
-    <Header />
+    <Header locale={locale} t={t} />
 
     <main id="main-content" class="flex-1">
       <slot />
     </main>
 
-    <Footer />
+    <Footer t={t} />
 
     <!-- Magnetic cursor: decorative, progressive enhancement -->
     <div id="magnetic-cursor" aria-hidden="true" style="position:fixed;z-index:9999;top:0;left:0;width:20px;height:20px;border-radius:50%;background:var(--color-cream);mix-blend-mode:difference;will-change:transform;pointer-events:none;display:none"></div>
