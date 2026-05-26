@@ -1,8 +1,18 @@
+---
+import type { Translations } from "../i18n/ui";
+
+export interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+---
+
 <a
   href="#main-content"
   class="skip-link fixed top-3 left-3 z-[1000] inline-flex items-center justify-center rounded-md bg-forest-green px-4 py-2.5 text-sm font-medium text-cream shadow-lg transition-transform focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent min-h-[44px]"
 >
-  Skip to content
+  {t["nav"]["skipToContent"]}
 </a>
 
 <style is:global>

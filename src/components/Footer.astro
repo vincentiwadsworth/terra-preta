@@ -1,17 +1,23 @@
 ---
 import { Icon } from "astro-icon/components";
 import { site } from "../data/site";
+import type { Translations } from "../i18n/ui";
 
+export interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
 const currentYear = new Date().getFullYear();
 
 const footerLinks = [
-  { label: "Home", href: "#hero", aria: "Back to top" },
-  { label: "How We Work", href: "#how-we-work", aria: "How We Work — footer" },
-  { label: "Product", href: "#product", aria: "Product — footer" },
-  { label: "Origin", href: "#origin", aria: "Origin — footer" },
-  { label: "Certifications", href: "#certifications", aria: "Certifications — footer" },
-  { label: "Export", href: "#export", aria: "Export — footer" },
-  { label: "Contact", href: "#contact", aria: "Contact — footer" },
+  { label: t["nav"]["home"], href: "#hero", aria: "Back to top" },
+  { label: t["nav"]["howWeWork"], href: "#how-we-work", aria: "How We Work — footer" },
+  { label: t["nav"]["product"], href: "#product", aria: "Product — footer" },
+  { label: t["nav"]["origin"], href: "#origin", aria: "Origin — footer" },
+  { label: t["nav"]["certifications"], href: "#certifications", aria: "Certifications — footer" },
+  { label: t["nav"]["export"], href: "#export", aria: "Export — footer" },
+  { label: t["nav"]["contact"], href: "#contact", aria: "Contact — footer" },
 ];
 ---
 
@@ -32,7 +38,7 @@ const footerLinks = [
       <!-- Col 2: Quick Links -->
       <div>
         <h3 class="text-sm font-semibold uppercase tracking-wider text-cream">
-          Quick Links
+          {t["footer"]["quickLinks"]}
         </h3>
         <nav aria-label="Footer navigation">
           <ul class="mt-4 space-y-2">
@@ -54,12 +60,12 @@ const footerLinks = [
       <!-- Col 3: Contact -->
       <div>
         <h3 class="text-sm font-semibold uppercase tracking-wider text-cream">
-          Contact
+          {t["footer"]["contact"]}
         </h3>
         <ul class="mt-4 space-y-2 text-sm text-cream/70">
           <li class="flex items-start gap-2">
             <Icon name="material-symbols:call" class="w-4 h-4 mt-0.5 shrink-0 text-cream/50" aria-hidden="true" />
-            <span>WhatsApp: {site.whatsappNumber}</span>
+            <span>{t["footer"]["whatsapp"]}: {site.whatsappNumber}</span>
           </li>
           <li class="flex items-start gap-2">
             <Icon name="material-symbols:mail" class="w-4 h-4 mt-0.5 shrink-0 text-cream/50" aria-hidden="true" />
@@ -67,7 +73,7 @@ const footerLinks = [
           </li>
           <li class="flex items-start gap-2">
             <Icon name="material-symbols:location-on" class="w-4 h-4 mt-0.5 shrink-0 text-cream/50" aria-hidden="true" />
-            <span>Santa Cruz de la Sierra, Bolivia</span>
+            <span>{t["footer"]["location"]}</span>
           </li>
         </ul>
 
@@ -108,11 +114,11 @@ const footerLinks = [
     <!-- Bottom bar -->
     <div class="mt-12 border-t border-cream/10 pt-8 text-center">
       <p class="text-xs text-cream/50">
-        &copy; {currentYear} {site.companyName}. All rights reserved.
-        &mdash; USDA NOP and EU Organic Certified.
+        &copy; {currentYear} {site.companyName}. {t["footer"]["copyright"]}
+        &mdash; {t["footer"]["copyrightCert"]}
       </p>
       <p class="mt-2 text-xs text-cream/40">
-        Terra Preta — Export coordination. Santa Cruz de la Sierra, Bolivia.
+        {t["footer"]["locationLine"]}
       </p>
     </div>
   </div>

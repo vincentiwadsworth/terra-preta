@@ -1,13 +1,23 @@
 ---
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import type { Translations } from "../i18n/ui";
+
+export interface Props {
+  locale: string;
+  t: Translations;
+}
+
+const { locale, t } = Astro.props;
+
 const navLinks = [
-  { label: "Home", href: "#hero" },
-  { label: "How We Work", href: "#how-we-work" },
-  { label: "Product", href: "#product" },
-  { label: "Origin", href: "#origin" },
-  { label: "Certifications", href: "#certifications" },
-  { label: "Export", href: "#export" },
-  { label: "Trust", href: "#social-proof" },
-  { label: "Contact", href: "#contact" },
+  { label: t["nav"]["home"], href: "#hero" },
+  { label: t["nav"]["howWeWork"], href: "#how-we-work" },
+  { label: t["nav"]["product"], href: "#product" },
+  { label: t["nav"]["origin"], href: "#origin" },
+  { label: t["nav"]["certifications"], href: "#certifications" },
+  { label: t["nav"]["export"], href: "#export" },
+  { label: t["nav"]["trust"], href: "#social-proof" },
+  { label: t["nav"]["contact"], href: "#contact" },
 ];
 ---
 
@@ -20,14 +30,14 @@ const navLinks = [
       aria-label="Terra Preta — Back to top"
     >
       <span class="text-lg font-bold tracking-tight text-cream">Terra Preta</span>
-      <span class="text-xs text-cream/70">Amazonian Superfoods</span>
+      <span class="text-xs text-cream/70">{t["nav"]["logoTagline"]}</span>
     </a>
 
     <!-- Mobile menu: <details>/<summary> — ZERO JavaScript (LP-14) -->
     <details class="group md:hidden">
       <summary
         class="flex list-none cursor-pointer items-center justify-center rounded p-1.5 text-cream transition-colors hover:bg-cream/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent min-h-[44px] min-w-[44px]"
-        aria-label="Toggle navigation menu"
+        aria-label={t["nav"]["menuToggle"]}
       >
         <!-- Hamburger icon (visible when closed) -->
         <svg
@@ -68,26 +78,31 @@ const navLinks = [
             </li>
           ))}
         </ul>
+        <div class="px-4 pb-3">
+          <LanguageSwitcher currentLocale={locale} />
+        </div>
       </nav>
     </details>
 
-    <!-- Desktop navigation -->
-    <nav
-      aria-label="Main navigation"
-      class="hidden md:block"
-    >
-      <ul class="flex gap-0.5">
-        {navLinks.map((link) => (
-          <li>
-            <a
-              href={link.href}
-              class="inline-flex items-center rounded px-3 py-2 text-sm font-medium text-cream/80 transition-colors hover:bg-cream/10 hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent min-h-[44px]"
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <!-- Desktop navigation + language switcher -->
+    <div class="hidden md:flex md:items-center md:gap-3">
+      <nav
+        aria-label="Main navigation"
+      >
+        <ul class="flex gap-0.5">
+          {navLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="inline-flex items-center rounded px-3 py-2 text-sm font-medium text-cream/80 transition-colors hover:bg-cream/10 hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent min-h-[44px]"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <LanguageSwitcher currentLocale={locale} />
+    </div>
   </div>
 </header>

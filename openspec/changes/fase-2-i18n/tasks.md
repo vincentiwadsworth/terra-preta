@@ -35,11 +35,11 @@ Chain strategy: stacked-to-main
 
 ## Phase 2: Integration (PR 2)
 
-- [ ] 2.1 Modify `src/layouts/BaseLayout.astro` — accept `locale: Locale` + `t: Translations` props; emit `<html lang={locale}>`, hreflang via `getAbsoluteLocaleUrlList()`, canonical via `getAbsoluteLocaleUrl()`, per-locale `<title>` + `<meta>`, `inLanguage` on JSON-LD
-- [ ] 2.2 Create `src/components/LanguageSwitcher.astro` — native names, `aria-current="page"`, `aria-label` per locale, `getRelativeLocaleUrl()` for hrefs, no flags
-- [ ] 2.3 Modify `src/components/Header.astro` — import LanguageSwitcher, translate `navLinks` labels via `t('nav.*')`
-- [ ] 2.4 Modify `src/components/Footer.astro` — translate headings, labels, bottom-bar text via `t('footer.*')`
-- [ ] 2.5 Modify `src/components/shared/SkipLink.astro` — accept `t` prop, use `t('nav.skipToContent')`
+- [x] 2.1 Modify `src/layouts/BaseLayout.astro` — accept `locale: Locale` + `t: Translations` props; emit `<html lang={locale}>`, hreflang via `getAbsoluteLocaleUrlList()`, canonical via `getAbsoluteLocaleUrl()`, per-locale `<title>` + `<meta>`, `inLanguage` on JSON-LD
+- [x] 2.2 Create `src/components/LanguageSwitcher.astro` — native names, `aria-current="page"`, `aria-label` per locale, `getRelativeLocaleUrl()` for hrefs, no flags
+- [x] 2.3 Modify `src/components/Header.astro` — import LanguageSwitcher, translate `navLinks` labels via `t['nav'].*`
+- [x] 2.4 Modify `src/components/Footer.astro` — translate headings, labels, bottom-bar text via `t['footer'].*`
+- [x] 2.5 Modify `src/components/shared/SkipLink.astro` — accept `t` prop, use `t['nav'].skipToContent`
 
 ## Phase 3: Content Migration (PR 3)
 
