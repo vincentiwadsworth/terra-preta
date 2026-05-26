@@ -1,12 +1,19 @@
 ---
+import type { Translations } from "../i18n/ui";
 import SectionHeading from "../shared/SectionHeading.astro";
+
+export interface Props {
+  locale: string;
+  t: Translations;
+}
+const { locale, t } = Astro.props;
 ---
 
 <section id="how-we-work" class="section-padding bg-background scroll-reveal">
   <div class="mx-auto max-w-7xl px-4 sm:px-6">
     <SectionHeading
-      title="How Terra Preta Works"
-      subtitle="From inquiry to shipment — we coordinate every step."
+      title={t["howWeWork"]["heading"]}
+      subtitle={t["howWeWork"]["subheading"]}
     />
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -15,9 +22,9 @@ import SectionHeading from "../shared/SectionHeading.astro";
         <div class="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-forest-green/10 text-forest-green mb-4 text-xl font-bold">
           1
         </div>
-        <h3 class="font-semibold mb-2">Your Requirements</h3>
+        <h3 class="font-semibold mb-2">{t["howWeWork"]["step1Title"]}</h3>
         <p class="text-sm text-on-background/70">
-          Share your volume, certification needs, and delivery timeline.
+          {t["howWeWork"]["step1Description"]}
         </p>
       </div>
 
@@ -26,9 +33,9 @@ import SectionHeading from "../shared/SectionHeading.astro";
         <div class="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-forest-green/10 text-forest-green mb-4 text-xl font-bold">
           2
         </div>
-        <h3 class="font-semibold mb-2">Producer Matching</h3>
+        <h3 class="font-semibold mb-2">{t["howWeWork"]["step2Title"]}</h3>
         <p class="text-sm text-on-background/70">
-          We identify competitive certified producers based on seasonal availability.
+          {t["howWeWork"]["step2Description"]}
         </p>
       </div>
 
@@ -37,9 +44,9 @@ import SectionHeading from "../shared/SectionHeading.astro";
         <div class="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-forest-green/10 text-forest-green mb-4 text-xl font-bold">
           3
         </div>
-        <h3 class="font-semibold mb-2">Verification &amp; Documentation</h3>
+        <h3 class="font-semibold mb-2">{t["howWeWork"]["step3Title"]}</h3>
         <p class="text-sm text-on-background/70">
-          We coordinate certification verification, batch testing, and export paperwork.
+          {t["howWeWork"]["step3Description"]}
         </p>
       </div>
 
@@ -48,9 +55,9 @@ import SectionHeading from "../shared/SectionHeading.astro";
         <div class="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-forest-green/10 text-forest-green mb-4 text-xl font-bold">
           4
         </div>
-        <h3 class="font-semibold mb-2">Export &amp; Delivery</h3>
+        <h3 class="font-semibold mb-2">{t["howWeWork"]["step4Title"]}</h3>
         <p class="text-sm text-on-background/70">
-          We handle logistics from Bolivia to your European facility.
+          {t["howWeWork"]["step4Description"]}
         </p>
       </div>
     </div>

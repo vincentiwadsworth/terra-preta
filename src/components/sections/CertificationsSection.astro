@@ -1,7 +1,14 @@
 ---
+import type { Translations } from "../i18n/ui";
 import { Icon } from "astro-icon/components";
 import SectionHeading from "../shared/SectionHeading.astro";
 import { certifications } from "../../data/certifications";
+
+export interface Props {
+  locale: string;
+  t: Translations;
+}
+const { locale, t } = Astro.props;
 
 const certIcons: Record<string, string> = {
   "USDA NOP Organic": "verified",
@@ -20,16 +27,14 @@ const certColors: Record<string, string> = {
   <div class="mx-auto max-w-7xl px-4 sm:px-6">
     <SectionHeading
       inverted
-      title="Certified Organic, Verified Transparent"
-      subtitle="Every shipment is backed by third-party organic certification. We verify all documentation — no claims without proof."
+      title={t["certifications"]["heading"]}
+      subtitle={t["certifications"]["subheading"]}
     />
 
     <!-- Certification ownership clarification -->
     <div class="max-w-3xl mx-auto text-center text-sm text-cream/70 mb-8">
       <p>
-        <strong>Note:</strong> Organic certifications are held by our producers and
-        processing partners in Bolivia. Terra Preta coordinates verification and
-        provides all documentation for EU import compliance.
+        {t["certifications"]["note"]}
       </p>
     </div>
 
@@ -60,12 +65,12 @@ const certColors: Record<string, string> = {
               <dl class="mt-4 space-y-2 text-sm flex-1">
                 <div>
                   <dt class="text-muted text-xs uppercase tracking-wide">
-                    Authority
+                    {t["certifications"]["authorityLabel"]}
                   </dt>
                   <dd class="text-on-background/80">{cert.authority}</dd>
                 </div>
                 <div>
-                  <dt class="text-muted text-xs uppercase tracking-wide">ID</dt>
+                  <dt class="text-muted text-xs uppercase tracking-wide">{t["certifications"]["idLabel"]}</dt>
                   <dd class="text-on-background/80 font-mono tabular-nums">
                     {cert.id}
                   </dd>
@@ -73,7 +78,7 @@ const certColors: Record<string, string> = {
                 {cert.validUntil && (
                   <div>
                     <dt class="text-muted text-xs uppercase tracking-wide">
-                      Valid Until
+                      {t["certifications"]["validUntilLabel"]}
                     </dt>
                     <dd class="text-on-background/80 tabular-nums">
                       {new Date(cert.validUntil).toLocaleDateString("en-GB", {
@@ -94,7 +99,7 @@ const certColors: Record<string, string> = {
                   rel="noopener noreferrer"
                   class="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-forest-green hover:text-forest-green/80 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded min-h-[44px]"
                 >
-                  Verify {cert.name}
+                  {t["certifications"]["verifyLinkPrefix"]} {cert.name}
                   <Icon
                     name="material-symbols:open-in-new"
                     class="w-4 h-4"

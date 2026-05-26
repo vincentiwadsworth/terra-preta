@@ -1,6 +1,13 @@
 ---
+import type { Translations } from "../i18n/ui";
 import { Icon } from "astro-icon/components";
 import SectionHeading from "../shared/SectionHeading.astro";
+
+export interface Props {
+  locale: string;
+  t: Translations;
+}
+const { locale, t } = Astro.props;
 
 // Placeholder for future testimonials and buyer logos.
 // When partners come on board, add objects with: name, role, company, quote, logoUrl
@@ -16,25 +23,25 @@ const testimonials: {
 <section id="social-proof" class="section-padding bg-background scroll-reveal">
   <div class="mx-auto max-w-7xl px-4 sm:px-6">
     <SectionHeading
-      title="Trusted by Industry Leaders"
-      subtitle="Buyer success stories, coming soon."
+      title={t["socialProof"]["heading"]}
+      subtitle={t["socialProof"]["subheading"]}
     />
 
     {
       testimonials.length > 0 ? (
         /* When testimonials exist, render them here */
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((t) => (
+          {testimonials.map((testimonial) => (
             <blockquote class="bg-cream rounded-lg p-6 border border-sand/20">
               <p class="text-on-background/80 italic leading-relaxed">
-                &ldquo;{t.quote}&rdquo;
+                &ldquo;{testimonial.quote}&rdquo;
               </p>
               <footer class="mt-4">
                 <cite class="not-italic font-semibold text-on-background text-sm block">
-                  {t.name}
+                  {testimonial.name}
                 </cite>
                 <span class="text-muted text-sm">
-                  {t.role}, {t.company}
+                  {testimonial.role}, {testimonial.company}
                 </span>
               </footer>
             </blockquote>
@@ -52,12 +59,10 @@ const testimonials: {
               />
             </div>
             <h3 class="text-lg font-semibold text-on-background mb-3 text-balance">
-              Partnerships Coming Soon
+              {t["socialProof"]["fallbackTitle"]}
             </h3>
             <p class="text-on-background/70 leading-relaxed text-balance max-w-md mx-auto">
-              Terra Preta is a new export venture built on decades of Amazonian
-              supply chain and compliance expertise. As our first European partners come on board, their
-              stories will appear here.
+              {t["socialProof"]["fallbackDescription"]}
             </p>
           </div>
         </div>

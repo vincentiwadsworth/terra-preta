@@ -1,6 +1,13 @@
 ---
+import type { Translations } from "../i18n/ui";
 import { Icon } from "astro-icon/components";
 import Button from "../shared/Button.astro";
+
+export interface Props {
+  locale: string;
+  t: Translations;
+}
+const { locale, t } = Astro.props;
 ---
 
 <section
@@ -19,7 +26,7 @@ import Button from "../shared/Button.astro";
     />
     <img
       src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1920&q=80&fm=webp&fit=crop"
-      alt="Aerial view of the Amazon rainforest river — lush green canopy winding through the landscape"
+      alt={t["hero"]["backgroundAlt"]}
       class="absolute inset-0 w-full h-full object-cover"
       loading="eager"
       decoding="async"
@@ -38,20 +45,17 @@ import Button from "../shared/Button.astro";
   <!-- Content -->
   <div class="relative z-10 text-center px-4 max-w-4xl mx-auto py-20 scroll-reveal">
     <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-cream text-balance leading-tight">
-      Amazonian Açaí,<br class="sm:hidden" /> European Standards
+      <Fragment set:html={t["hero"]["title"]} />
     </h1>
     <p class="mt-6 text-lg md:text-xl text-cream text-balance max-w-3xl mx-auto leading-relaxed">
-      Terra Preta connects European buyers with certified freeze-dried açaí
-      producers in the Bolivian Amazon. We coordinate harvest-to-export
-      logistics and organic certification verification — so you receive
-      compliant, premium açaí powder without supply chain complexity.
+      {t["hero"]["subtitle"]}
     </p>
     <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
       <Button href="#contact" variant="primary" size="lg" umamiEvent="cta-inquire">
-        Inquire About Seasonal Stock
+        {t["hero"]["ctaPrimary"]}
       </Button>
       <Button href="/FT%20FREEZE%20DRIED%20ORGANIC%20ACAI%20POWDER.pdf" variant="outline-light" size="lg" external umamiEvent="download-product-specs">
-        Download Product Specs
+        {t["hero"]["ctaSecondary"]}
       </Button>
     </div>
   </div>
@@ -61,9 +65,9 @@ import Button from "../shared/Button.astro";
     <a
       href="#how-we-work"
       class="flex flex-col items-center gap-2 text-cream hover:text-cream/80 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded"
-      aria-label="Scroll to How We Work section"
+      aria-label={t["hero"]["scrollAriaLabel"]}
     >
-      <span class="text-xs uppercase tracking-widest">Scroll</span>
+      <span class="text-xs uppercase tracking-widest">{t["hero"]["scrollHint"]}</span>
       <span class="animate-bounce" aria-hidden="true">
         <Icon name="material-symbols:arrow-downward" class="w-6 h-6" />
       </span>

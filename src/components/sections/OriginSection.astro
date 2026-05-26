@@ -1,14 +1,21 @@
 ---
+import type { Translations } from "../i18n/ui";
 import SectionHeading from "../shared/SectionHeading.astro";
 import MapEmbed from "../shared/MapEmbed.astro";
 import { product } from "../../data/products";
+
+export interface Props {
+  locale: string;
+  t: Translations;
+}
+const { locale, t } = Astro.props;
 ---
 
 <section id="origin" class="section-padding bg-cream scroll-reveal">
   <div class="mx-auto max-w-7xl px-4 sm:px-6">
     <SectionHeading
-      title="From the Amazon to Your Facility"
-      subtitle="Coordinated from harvest to export in under 100 hours — preserving nature's intent at every step."
+      title={t["origin"]["heading"]}
+      subtitle={t["origin"]["subheading"]}
     />
 
     <!-- Two-column layout -->
@@ -16,18 +23,10 @@ import { product } from "../../data/products";
       <!-- Left: Narrative text -->
       <div class="space-y-6">
         <p class="text-lg text-on-background/80 leading-relaxed text-balance">
-          Açaí sourced for Terra Preta is harvested by indigenous communities
-          in the Bolivian Amazon. The fruit is transformed into puree within
-          24 hours of harvest by certified processing partners, then
-          freeze-dried into powder in under 100 hours — preserving maximum
-          nutritional integrity.
+          {t["origin"]["description"]}
         </p>
         <p class="text-on-background/70 leading-relaxed">
-          The wild-harvested <em>Euterpe precatoria</em> palm produces a
-          smaller, more nutrient-dense berry than its cultivated Brazilian
-          cousin. Growing in the biodiverse floodplains of the Beni region,
-          these palms absorb the richness of Amazonian soil — the original
-          <em>terra preta</em> that gives our company its name.
+          <Fragment set:html={t["origin"]["paragraph2"]} />
         </p>
       </div>
 
@@ -36,7 +35,7 @@ import { product } from "../../data/products";
         <MapEmbed />
 
         <p class="mt-2 text-xs text-on-background/40 text-center">
-          Example sourcing locations: Comunidad Buen Retiro · Luz de América · El Porvenir — Riberalta, Beni, Bolivia
+          {t["origin"]["mapCaption"]}
         </p>
 
         <!-- Stats overlay -->
@@ -46,7 +45,7 @@ import { product } from "../../data/products";
               &lt;100<span class="text-lg">h</span>
             </p>
             <p class="mt-1 text-sm text-on-background/70 text-balance leading-tight">
-              From harvest to powder
+              {t["origin"]["stat1Label"]}
             </p>
           </div>
           <div>
@@ -54,7 +53,7 @@ import { product } from "../../data/products";
               1,850<span class="text-lg">g</span>
             </p>
             <p class="mt-1 text-sm text-on-background/70 text-balance leading-tight">
-              Raw fruit = 100g powder
+              {t["origin"]["stat2Label"]}
             </p>
           </div>
           <div>
@@ -62,7 +61,7 @@ import { product } from "../../data/products";
               {product.oracTotal.toLocaleString("en-US")}
             </p>
             <p class="mt-1 text-sm text-on-background/70 text-balance leading-tight">
-              ORAC µmol TE/100g
+              {t["origin"]["stat3Label"]}
             </p>
           </div>
         </div>

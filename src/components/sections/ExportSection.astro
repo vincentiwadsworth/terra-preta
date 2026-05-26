@@ -1,23 +1,30 @@
 ---
+import type { Translations } from "../i18n/ui";
 import { Icon } from "astro-icon/components";
 import SectionHeading from "../shared/SectionHeading.astro";
 import Button from "../shared/Button.astro";
 
+export interface Props {
+  locale: string;
+  t: Translations;
+}
+const { locale, t } = Astro.props;
+
 const exportColumns = [
   {
     icon: "check-circle",
-    heading: "EU Certified",
-    body: "Açaí sourced by Terra Preta meets EU Organic Regulation 2018/848. CN code 0813. Ready for import into all EU member states.",
+    heading: t["export"]["column1Heading"],
+    body: t["export"]["column1Body"],
   },
   {
     icon: "local-shipping",
-    heading: "Flexible Orders",
-    body: "No minimum order quantity. Inquire about seasonal stock availability and current pricing. We work with your volume needs.",
+    heading: t["export"]["column2Heading"],
+    body: t["export"]["column2Body"],
   },
   {
     icon: "factory",
-    heading: "Source-Verified Quality",
-    body: "We coordinate with certified producers and processors in Santa Cruz, Bolivia. Producer selection is based on competitive quality and seasonal availability. Full traceability documentation from harvest to export.",
+    heading: t["export"]["column3Heading"],
+    body: t["export"]["column3Body"],
   },
 ];
 ---
@@ -25,8 +32,8 @@ const exportColumns = [
 <section id="export" class="section-padding bg-sand scroll-reveal">
   <div class="mx-auto max-w-7xl px-4 sm:px-6">
     <SectionHeading
-      title="Export-Ready for Europe"
-      subtitle="We handle logistics so you don't have to."
+      title={t["export"]["heading"]}
+      subtitle={t["export"]["subheading"]}
     />
 
     <!-- Three-column layout -->
@@ -53,7 +60,7 @@ const exportColumns = [
     <!-- CTA -->
     <div class="text-center">
       <Button href="#contact" variant="primary" size="lg" umamiEvent="cta-inquire">
-        Inquire About Stock &amp; Pricing
+        {t["export"]["ctaButton"]}
       </Button>
     </div>
   </div>

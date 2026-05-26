@@ -1,24 +1,31 @@
 ---
+import type { Translations } from "../i18n/ui";
 import SectionHeading from "../shared/SectionHeading.astro";
 import { product } from "../../data/products";
+
+export interface Props {
+  locale: string;
+  t: Translations;
+}
+const { locale, t } = Astro.props;
 ---
 
 <section id="product" class="section-padding bg-background scroll-reveal">
   <div class="mx-auto max-w-7xl px-4 sm:px-6">
     <SectionHeading
-      title="Featured Export: Freeze-Dried Açaí Powder"
-      subtitle="Euterpe precatoria — wild-harvested, organic, freeze-dried to preserve its extraordinary nutritional profile."
+      title={t["product"]["heading"]}
+      subtitle={t["product"]["subheading"]}
     />
 
     <!-- Product description -->
     <p class="max-w-3xl mx-auto text-center text-on-background/80 leading-relaxed mb-12">
-      {product.description}
+      {t["product"]["description"]}
     </p>
 
     <!-- ORAC highlight -->
     <div class="max-w-sm mx-auto text-center mb-14 p-6 rounded-lg bg-acai-purple/5 border border-acai-purple/15">
       <p class="text-sm uppercase tracking-widest text-acai-purple/70 mb-1">
-        Antioxidant Power
+        {t["product"]["antioxidantLabel"]}
       </p>
       <p class="text-4xl md:text-5xl font-bold text-acai-purple tabular-nums">
         {product.oracTotal.toLocaleString("en-US")}
@@ -28,7 +35,7 @@ import { product } from "../../data/products";
 
     <!-- Nutrition facts grid -->
     <h3 class="text-xl font-semibold text-on-background text-center mb-6 text-balance">
-      Nutritional Profile (per 100g)
+      {t["product"]["nutritionHeading"]}
     </h3>
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
       {product.nutritionFacts.map((fact) => (
@@ -45,23 +52,23 @@ import { product } from "../../data/products";
 
     <!-- Particle size -->
     <h3 class="text-xl font-semibold text-on-background text-center mb-6 text-balance">
-      Particle Size Distribution
+      {t["product"]["particleHeading"]}
     </h3>
     <div class="overflow-x-auto mb-12">
       <table class="mx-auto text-sm text-left border-collapse">
         <caption class="sr-only">
-          Particle size distribution by mesh and micron
+          {t["product"]["particleCaption"]}
         </caption>
         <thead>
           <tr class="border-b border-sand">
             <th scope="col" class="px-4 py-2 font-medium text-muted">
-              Mesh
+              {t["product"]["meshLabel"]}
             </th>
             <th scope="col" class="px-4 py-2 font-medium text-muted">
-              Microns
+              {t["product"]["micronsLabel"]}
             </th>
             <th scope="col" class="px-4 py-2 font-medium text-muted">
-              Pass Rate
+              {t["product"]["passRateLabel"]}
             </th>
           </tr>
         </thead>
@@ -81,7 +88,7 @@ import { product } from "../../data/products";
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Packaging -->
       <div class="bg-cream rounded-lg p-5 border border-sand/20">
-        <h4 class="font-semibold text-on-background mb-3">Packaging</h4>
+        <h4 class="font-semibold text-on-background mb-3">{t["product"]["packagingHeading"]}</h4>
         <ul class="space-y-2 text-sm text-on-background/80">
           {product.packaging.map((pkg) => (
             <li>
@@ -94,26 +101,32 @@ import { product } from "../../data/products";
       <!-- Shelf life -->
       <div class="bg-cream rounded-lg p-5 border border-sand/20">
         <h4 class="font-semibold text-on-background mb-3">
-          Shelf Life &amp; Storage
+          {t["product"]["shelfLifeHeading"]}
         </h4>
-        <p class="text-sm text-on-background/80">{product.shelfLife}</p>
+        <p class="text-sm text-on-background/80">{t["product"]["shelfLife"]}</p>
         <p class="text-sm text-on-background/80 mt-2">
-          {product.storageConditions}
+          {t["product"]["storageConditions"]}
         </p>
       </div>
 
       <!-- Certifications -->
       <div class="bg-cream rounded-lg p-5 border border-sand/20">
         <h4 class="font-semibold text-on-background mb-3">
-          Certifications
+          {t["product"]["certificationsHeading"]}
         </h4>
         <ul class="space-y-1.5 text-sm text-on-background/80">
-          {product.certifications.map((cert) => (
-            <li class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-forest-green flex-shrink-0" aria-hidden="true"></span>
-              {cert}
-            </li>
-          ))}
+          <li class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-forest-green flex-shrink-0" aria-hidden="true"></span>
+            {t["product"]["certUSDA"]}
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-forest-green flex-shrink-0" aria-hidden="true"></span>
+            {t["product"]["certEU"]}
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-forest-green flex-shrink-0" aria-hidden="true"></span>
+            {t["product"]["certBolivia"]}
+          </li>
         </ul>
       </div>
     </div>
