@@ -43,10 +43,10 @@ Chain strategy: stacked-to-main
 
 ## Phase 3: Content Migration (PR 3)
 
-- [ ] 3.1 Create `src/i18n/locales/es.json`, `fr.json`, `de.json` — all keys matching `en.json` schema, translated content per locale
-- [ ] 3.2 Modify `HeroSection.astro`, `HowWeWorkSection.astro`, `ProductSection.astro`, `OriginSection.astro` — accept `{ locale, t }` props, replace all hardcoded strings with `t('sectionName.*')`
-- [ ] 3.3 Modify `CertificationsSection.astro`, `ExportSection.astro`, `SocialProofSection.astro`, `ContactSection.astro` — same pattern as 3.2
-- [ ] 3.4 Modify `src/data/site.ts`, `src/data/products.ts`, `src/data/certifications.ts` — remove translatable strings (keep only structural IDs, URLs, numbers)
+- [x] 3.1 Create `src/i18n/locales/es.json`, `fr.json`, `de.json` — all keys matching `en.json` schema, translated content per locale
+- [x] 3.2 Modify `HeroSection.astro`, `HowWeWorkSection.astro`, `ProductSection.astro`, `OriginSection.astro` — accept `{ locale, t }` props, replace all hardcoded strings with `t('sectionName.*')`
+- [x] 3.3 Modify `CertificationsSection.astro`, `ExportSection.astro`, `SocialProofSection.astro`, `ContactSection.astro` — same pattern as 3.2
+- [x] 3.4 Modify `src/data/site.ts` — remove translatable strings (tagline, description); keep structural fields only
 
 ## Phase 4: Verification (manual)
 
