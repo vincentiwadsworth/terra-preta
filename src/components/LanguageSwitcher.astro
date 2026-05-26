@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
 export interface Props {
@@ -15,20 +16,52 @@ const localeNames: Record<string, string> = {
 };
 ---
 
-<nav aria-label="Language switcher" class="flex flex-wrap items-center gap-1">
-  {Object.entries(localeNames).map(([code, name]) => (
-    <a
-      href={getRelativeLocaleUrl(code)}
-      aria-label={`Switch to ${name}`}
-      aria-current={code === currentLocale ? "page" : undefined}
-      class:list={[
-        "inline-flex items-center rounded px-2.5 py-1.5 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent min-h-[44px] min-w-[44px]",
-        code === currentLocale
-          ? "bg-cream/15 text-cream"
-          : "text-cream/70 hover:bg-cream/10 hover:text-cream",
-      ]}
+<details class="group relative">
+  <!-- Trigger button -->
+  <summary
+    class="flex cursor-pointer items-center gap-1.5 rounded px-2.5 py-1.5 text-sm font-medium text-cream/70 transition-colors hover:bg-cream/10 hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent min-h-[44px] min-w-[44px] list-none"
+    aria-label="Select language"
+  >
+    <Icon
+      name="material-symbols:language"
+      class="w-5 h-5"
+      aria-hidden="true"
+    />
+    <span class="sr-only">Language</span>
+    <!-- Chevron -->
+    <svg
+      class="w-3.5 h-3.5 opacity-60 group-open:rotate-180 transition-transform duration-200"
+      aria-hidden="true"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.5"
+      viewBox="0 0 24 24"
     >
-      {name}
-    </a>
-  ))}
-</nav>
+      <path d="M19 9l-7 7-7-7" />
+    </svg>
+  </summary>
+
+  <!-- Dropdown menu -->
+  <ul
+    class="absolute right-0 top-full mt-1.5 min-w-[140px] rounded border border-cream/10 bg-forest-green py-1 shadow-lg z-50"
+    role="list"
+  >
+    {Object.entries(localeNames).map(([code, name]) => (
+      <li>
+        <a
+          href={getRelativeLocaleUrl(code)}
+          aria-label={`Switch to ${name}`}
+          aria-current={code === currentLocale ? "page" : undefined}
+          class:list={[
+            "block px-4 py-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent",
+            code === currentLocale
+              ? "bg-cream/15 text-cream font-medium"
+              : "text-cream/70 hover:bg-cream/10 hover:text-cream",
+          ]}
+        >
+          {name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</details>
