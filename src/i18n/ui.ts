@@ -1,4 +1,7 @@
 import en from "./locales/en.json";
+import es from "./locales/es.json";
+import fr from "./locales/fr.json";
+import de from "./locales/de.json";
 
 export const locales = ["en", "es", "fr", "de"] as const;
 export type Locale = (typeof locales)[number];
@@ -7,14 +10,12 @@ export const defaultLocale: Locale = "en";
 /** Type-safe translations derived from en.json structure */
 export type Translations = typeof en;
 
+const localeData: Record<string, Translations> = { en, es, fr, de };
+
 /**
  * Returns typed translations for the given locale.
- * Falls back to English for locales whose JSON files
- * have not yet been created (es, fr, de come in PR 3).
+ * Falls back to English if the locale is not found.
  */
 export function useTranslations(locale: string): Translations {
-  // Only en.json exists in PR 1. Fall back to English
-  // for es, fr, de until their locale files are created.
-  if (locale === "en") return en;
-  return en;
+  return localeData[locale] ?? en;
 }

@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "howWeWork": "Cómo Trabajamos",
+    "product": "Producto",
+    "origin": "Origen",
+    "certifications": "Certificaciones",
+    "export": "Exportación",
+    "trust": "Confianza",
+    "contact": "Contacto",
+    "skipToContent": "Ir al contenido",
+    "menuToggle": "Abrir menú de navegación",
+    "logoTagline": "Superalimentos Amazónicos"
+  },
+  "hero": {
+    "title": "Açaí Amazónico, Estándares Europeos",
+    "subtitle": "Terra Preta conecta a compradores europeos con productores certificados de açaí liofilizado en la Amazonía boliviana. Coordinamos la logística de cosecha a exportación y la verificación de certificaciones orgánicas — para que reciba açaí en polvo de primera calidad, conforme con las normativas, sin la complejidad de la cadena de suministro.",
+    "ctaPrimary": "Consultar Disponibilidad Temporada",
+    "ctaSecondary": "Descargar Especificaciones del Producto",
+    "scrollHint": "Desplazar",
+    "scrollAriaLabel": "Ir a la sección Cómo Trabajamos",
+    "backgroundAlt": "Vista aérea del río en la selva amazónica — un dosel verde exuberante serpenteando por el paisaje"
+  },
+  "howWeWork": {
+    "heading": "Cómo Funciona Terra Preta",
+    "subheading": "Desde su consulta hasta el embarque — coordinamos cada paso.",
+    "step1Title": "Sus Requisitos",
+    "step1Description": "Comparta su volumen, necesidades de certificación y plazo de entrega.",
+    "step2Title": "Selección de Productor",
+    "step2Description": "Identificamos productores certificados competitivos según la disponibilidad temporal.",
+    "step3Title": "Verificación y Documentación",
+    "step3Description": "Coordinamos la verificación de certificaciones, análisis de lotes y documentación de exportación.",
+    "step4Title": "Exportación y Entrega",
+    "step4Description": "Gestionamos la logística desde Bolivia hasta su instalación europea."
+  },
+  "origin": {
+    "heading": "De la Amazonía a Su Instalación",
+    "subheading": "Coordinado de la cosecha a la exportación en menos de 100 horas — preservando la esencia de la naturaleza en cada etapa.",
+    "description": "El açaí seleccionado para Terra Preta es cosechado por comunidades indígenas en la Amazonía boliviana. El fruto se transforma en puré dentro de las 24 horas posteriores a la cosecha mediante socios procesadores certificados, y luego se liofiliza en polvo en menos de 100 horas — preservando la máxima integridad nutricional.",
+    "paragraph2": "La palma <em>Euterpe precatoria</em> de cosecha silvestre produce una baya más pequeña y densa en nutrientes que su prima cultivada brasileña. Al crecer en las llanuras aluviales biodiversas de la región del Beni, estas palmas absorben la riqueza del suelo amazónico — la <em>terra preta</em> original que da nombre a nuestra empresa.",
+    "mapCaption": "Ubicaciones de abastecimiento de referencia: Comunidad Buen Retiro · Luz de América · El Porvenir — Riberalta, Beni, Bolivia",
+    "stat1Label": "De cosecha a polvo",
+    "stat2Label": "Fruta cruda = 100g polvo",
+    "stat3Label": "ORAC µmol TE/100g"
+  },
+  "certifications": {
+    "heading": "Orgánico Certificado, Verificado con Transparencia",
+    "subheading": "Cada embarque cuenta con certificación orgánica de terceros. Verificamos toda la documentación — sin afirmaciones sin respaldo.",
+    "note": "Las certificaciones orgánicas son propiedad de nuestros productores y socios procesadores en Bolivia. Terra Preta coordina la verificación y proporciona toda la documentación para el cumplimiento de las normativas de importación de la UE.",
+    "authorityLabel": "Entidad",
+    "idLabel": "ID",
+    "validUntilLabel": "Válido Hasta",
+    "verifyLinkPrefix": "Verificar"
+  },
+  "product": {
+    "heading": "Producto Estrella: Polvo de Açaí Liofilizado",
+    "subheading": "Euterpe precatoria — de cosecha silvestre, orgánico, liofilizado para preservar su extraordinario perfil nutricional.",
+    "description": "Polvo de açaí liofilizado 100% orgánico, proveniente de palmas <em>Euterpe precatoria</em> de cosecha silvestre en la región del Beni, Bolivia. Procesado en frío horas después de la cosecha para preservar la máxima integridad nutricional, su color vibrante y el auténtico sabor amazónico.",
+    "antioxidantLabel": "Poder Antioxidante",
+    "oracLabel": "ORAC µmol TE/100g",
+    "nutritionHeading": "Perfil Nutricional (por 100g)",
+    "particleHeading": "Distribución de Tamaño de Partícula",
+    "particleCaption": "Distribución de tamaño de partícula por malla y micrón",
+    "meshLabel": "Malla",
+    "micronsLabel": "Micrones",
+    "passRateLabel": "Tasa de Pase",
+    "packagingHeading": "Embalaje",
+    "shelfLifeHeading": "Vida Útil y Almacenamiento",
+    "shelfLife": "24 meses desde la fecha de producción cuando se almacena según las indicaciones",
+    "storageConditions": "Ambiente fresco y seco (<25°C, <65% HR). Mantener sellado después de abrir.",
+    "certificationsHeading": "Certificaciones",
+    "certUSDA": "Orgánico USDA NOP",
+    "certEU": "Orgánico UE (Reg. 2018/848)",
+    "certBolivia": "Orgánico Nacional Bolivia (Ley 3525/06)"
+  },
+  "export": {
+    "heading": "Listo para Exportación a Europa",
+    "subheading": "Nosotros gestionamos la logística para que usted no tenga que hacerlo.",
+    "column1Heading": "Certificado para la UE",
+    "column1Body": "El açaí seleccionado por Terra Preta cumple con el Reglamento Orgánico de la UE 2018/848. Código CN 0813. Listo para importación en todos los Estados miembros de la UE.",
+    "column2Heading": "Pedidos Flexibles",
+    "column2Body": "Sin cantidad mínima de pedido. Consulte disponibilidad de stock temporal y precios vigentes. Nos adaptamos a sus necesidades de volumen.",
+    "column3Heading": "Calidad Verificada en Origen",
+    "column3Body": "Coordinamos con productores y procesadores certificados en Santa Cruz, Bolivia. La selección de productores se basa en calidad competitiva y disponibilidad temporal. Documentación completa de trazabilidad desde la cosecha hasta la exportación.",
+    "ctaButton": "Consultar Stock y Precios"
+  },
+  "socialProof": {
+    "heading": "Respaldado por Líderes de la Industria",
+    "subheading": "Historias de éxito de compradores, próximamente.",
+    "fallbackTitle": "Alianzas Próximamente",
+    "fallbackDescription": "Terra Preta es una nueva empresa de exportación construida sobre décadas de experiencia en cadenas de suministro amazónicas y cumplimiento normativo. A medida que nuestros primeros socios europeos se incorporen, sus historias aparecerán aquí."
+  },
+  "contact": {
+    "heading": "Hablemos de Açaí",
+    "subheading": "Consulte sobre stock temporal, solicite muestras o discuta sus requisitos.",
+    "whatsapp": "WhatsApp",
+    "whatsappAriaLabel": "Chatee con Carlos por WhatsApp",
+    "email": "Correo Electrónico",
+    "emailAriaLabel": "Envíenos un correo electrónico",
+    "location": "Ubicación",
+    "contactName": "Carlos Gómez",
+    "locationCity": "Santa Cruz de la Sierra",
+    "locationCountry": "Bolivia",
+    "responseTime": "Normalmente respondemos en 24 horas.",
+    "downloadDatasheet": "Ficha Técnica del Producto (PDF)",
+    "downloadCertificate": "Certificado USDA NOP (PDF)"
+  },
+  "footer": {
+    "quickLinks": "Enlaces Rápidos",
+    "contact": "Contacto",
+    "whatsapp": "WhatsApp",
+    "location": "Santa Cruz de la Sierra, Bolivia",
+    "copyright": "Todos los derechos reservados.",
+    "copyrightCert": "Certificado Orgánico USDA NOP y UE.",
+    "locationLine": "Terra Preta — Coordinación de exportación. Santa Cruz de la Sierra, Bolivia."
+  },
+  "meta": {
+    "siteName": "Terra Preta",
+    "titleSuffix": "Polvo de Açaí Liofilizado Premium",
+    "defaultDescription": "Terra Preta conecta a compradores europeos con productores certificados de açaí liofilizado en la Amazonía boliviana. Coordinamos la logística de cosecha a exportación y gestionamos la verificación de certificaciones orgánicas — para que reciba açaí en polvo de primera calidad y conforme con las normativas, sin necesidad de gestionar cadenas de suministro complejas. Certificado USDA NOP y Orgánico UE.",
+    "ogTitle": "Polvo de Açaí Liofilizado Premium — Terra Preta"
+  }
+}

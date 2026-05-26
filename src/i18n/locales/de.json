@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "howWeWork": "Unsere Methode",
+    "product": "Produkt",
+    "origin": "Herkunft",
+    "certifications": "Zertifizierungen",
+    "export": "Export",
+    "trust": "Vertrauen",
+    "contact": "Kontakt",
+    "skipToContent": "Zum Inhalt springen",
+    "menuToggle": "Navigationsmenü öffnen",
+    "logoTagline": "Amazonische Superfoods"
+  },
+  "hero": {
+    "title": "Amazonisches Açaí, Europäische Standards",
+    "subtitle": "Terra Preta verbindet europäische Käufer mit zertifizierten Gefriertrocknungs-Produzenten von Açaí im bolivianischen Amazonasgebiet. Wir koordinieren die Logistik von der Ernte bis zum Export und die Überprüfung der Bio-Zertifizierungen — damit Sie konformes, Premium-Açaí-Pulver ohne Lieferkettenkomplexität erhalten.",
+    "ctaPrimary": "Saisonalverfügbarkeit Anfragen",
+    "ctaSecondary": "Produktspezifikationen Herunterladen",
+    "scrollHint": "Scrollen",
+    "scrollAriaLabel": "Zum Abschnitt Unsere Methode scrollen",
+    "backgroundAlt": "Luftansicht eines Flusses im Amazonas-Regenwald — üppiges grünes Blätterdach, das sich durch die Landschaft schlängelt"
+  },
+  "howWeWork": {
+    "heading": "So Funktioniert Terra Preta",
+    "subheading": "Von Ihrer Anfrage bis zum Versand — wir koordinieren jeden Schritt.",
+    "step1Title": "Ihre Anforderungen",
+    "step1Description": "Teilen Sie uns Ihr Volumen, Ihren Zertifizierungsbedarf und Ihren Lieferzeitrahmen mit.",
+    "step2Title": "Produktauswahl",
+    "step2Description": "Wir identifizieren wettbewerbsfähige zertifizierte Produzenten basierend auf saisonaler Verfügbarkeit.",
+    "step3Title": "Überprüfung und Dokumentation",
+    "step3Description": "Wir koordinieren die Zertifizierungsüberprüfung, Chargenprüfung und Exportdokumentation.",
+    "step4Title": "Export und Lieferung",
+    "step4Description": "Wir steuern die Logistik von Bolivien bis zu Ihrer europäischen Einrichtung."
+  },
+  "origin": {
+    "heading": "Vom Amazonas zu Ihrer Einrichtung",
+    "subheading": "Von der Ernte bis zum Export in unter 100 Stunden koordiniert — die Absicht der Natur wird in jedem Schritt bewahrt.",
+    "description": "Das für Terra Preta ausgewählte Açaí wird von indigenen Gemeinschaften im bolivianischen Amazonasgebiet geerntet. Die Frucht wird innerhalb von 24 Stunden nach der Ernte von zertifizierten Verarbeitungspartnern zu Purée verarbeitet und dann in unter 100 Stunden zu Pulver gefriergetrocknet — bei maximaler Erhaltung der Nährstoffintegrität.",
+    "paragraph2": "Die wild geerntete <em>Euterpe precatoria</em>-Palme produziert eine kleinere, nährstoffreichere Beere als ihr kultivierter brasilianischer Verwandter. In den artenreichen Überschwemmungsebenen der Region Beni wachsend, absorbieren diese Palmen den Reichtum des amazonischen Bodens — das originale <em>Terra Preta</em>, das unserer Firma ihren Namen gibt.",
+    "mapCaption": "Beispiel-Bezugsquellen: Comunidad Buen Retiro · Luz de América · El Porvenir — Riberalta, Beni, Bolivien",
+    "stat1Label": "Von der Ernte zum Pulver",
+    "stat2Label": "Rohfrucht = 100g Pulver",
+    "stat3Label": "ORAC µmol TE/100g"
+  },
+  "certifications": {
+    "heading": "Bio-Zertifiziert, Transparent Überprüft",
+    "subheading": "Jede Sendung wird durch eine Bio-Zertifizierung von Drittparteien belegt. Wir überprüfen die gesamte Dokumentation — keine Behauptungen ohne Nachweis.",
+    "note": "Die Bio-Zertifizierungen liegen bei unseren Produzenten und Verarbeitungspartnern in Bolivien. Terra Preta koordiniert die Überprüfung und stellt die gesamte Dokumentation für die EU-Importkonformität zur Verfügung.",
+    "authorityLabel": "Stelle",
+    "idLabel": "ID",
+    "validUntilLabel": "Gültig Bis",
+    "verifyLinkPrefix": "Überprüfen"
+  },
+  "product": {
+    "heading": "Unser Export-Highlight: Gefriergetrocknetes Açaí-Pulver",
+    "subheading": "Euterpe precatoria — wild geerntet, bio, gefriergetrocknet zur Bewahrung seines außergewöhnlichen Nährstoffprofils.",
+    "description": "100% bio-gefriergetrocknetes Açaí-Pulver aus wild geernteten <em>Euterpe precatoria</em>-Palmen in der Region Beni, Bolivien. Kaltverarbeitet innerhalb von Stunden nach der Ernte zur maximalen Erhaltung der Nährstoffintegrität, der lebhaften Farbe und des authentischen amazonischen Geschmacks.",
+    "antioxidantLabel": "Antioxidative Kraft",
+    "oracLabel": "ORAC µmol TE/100g",
+    "nutritionHeading": "Nährwertprofil (pro 100g)",
+    "particleHeading": "Partikelgrößenverteilung",
+    "particleCaption": "Partikelgrößenverteilung nach Sieb und Mikron",
+    "meshLabel": "Sieb",
+    "micronsLabel": "Mikron",
+    "passRateLabel": "Durchgangsrate",
+    "packagingHeading": "Verpackung",
+    "shelfLifeHeading": "Haltbarkeit und Lagerung",
+    "shelfLife": "24 Monate ab Produktionsdatum bei ordnungsgemäßer Lagerung",
+    "storageConditions": "Kühle, trockene Umgebung (<25°C, <65% RF). Nach dem Öffnen verschlossen halten.",
+    "certificationsHeading": "Zertifizierungen",
+    "certUSDA": "USDA NOP Bio",
+    "certEU": "EU Bio (Verordnung 2018/848)",
+    "certBolivia": "Bolivien National Bio (Ley 3525/06)"
+  },
+  "export": {
+    "heading": "Exportbereit für Europa",
+    "subheading": "Wir übernehmen die Logistik, damit Sie sich nicht darum kümmern müssen.",
+    "column1Heading": "EU-Zertifiziert",
+    "column1Body": "Das von Terra Preta ausgewählte Açaí entspricht der EU-Bio-Verordnung 2018/848. CN-Code 0813. Importbereit in alle EU-Mitgliedsstaaten.",
+    "column2Heading": "Flexible Bestellungen",
+    "column2Body": "Keine Mindestbestellmenge. Erkundigen Sie sich nach saisonaler Verfügbarkeit und aktuellen Preisen. Wir passen uns Ihrem Volumenbedarf an.",
+    "column3Heading": "Quellenverifizierte Qualität",
+    "column3Body": "Wir koordinieren mit zertifizierten Produzenten und Verarbeitern in Santa Cruz, Bolivien. Die Produzentenauswahl basiert auf Wettbewerbsfähigkeit und saisonaler Verfügbarkeit. Vollständige Rückverfolgbarkeitsdokumentation von der Ernte bis zum Export.",
+    "ctaButton": "Verfügbarkeit und Preise Anfragen"
+  },
+  "socialProof": {
+    "heading": "Vertrauen von Branchenführern",
+    "subheading": "Käufer-Erfolgsgeschichten, demnächst.",
+    "fallbackTitle": "Partnerschaften Demnächst",
+    "fallbackDescription": "Terra Preta ist ein neues Exportunternehmen, das auf jahrzehntelanger Expertise in der amazonischen Lieferkette und regulatorischen Compliance aufbaut. Sobald unsere ersten europäischen Partner an Bord sind, werden ihre Geschichten hier erscheinen."
+  },
+  "contact": {
+    "heading": "Lassen Sie Uns über Açaí Sprechen",
+    "subheading": "Erkundigen Sie sich nach Saisonware, fordern Sie Proben an oder besprechen Sie Ihre Anforderungen.",
+    "whatsapp": "WhatsApp",
+    "whatsappAriaLabel": "Mit Carlos über WhatsApp chatten",
+    "email": "E-Mail",
+    "emailAriaLabel": "Uns eine E-Mail senden",
+    "location": "Standort",
+    "contactName": "Carlos Gómez",
+    "locationCity": "Santa Cruz de la Sierra",
+    "locationCountry": "Bolivien",
+    "responseTime": "Wir antworten in der Regel innerhalb von 24 Stunden.",
+    "downloadDatasheet": "Produktdatenblatt (PDF)",
+    "downloadCertificate": "USDA NOP Zertifikat (PDF)"
+  },
+  "footer": {
+    "quickLinks": "Schnelllinks",
+    "contact": "Kontakt",
+    "whatsapp": "WhatsApp",
+    "location": "Santa Cruz de la Sierra, Bolivien",
+    "copyright": "Alle Rechte vorbehalten.",
+    "copyrightCert": "USDA NOP und EU-Bio zertifiziert.",
+    "locationLine": "Terra Preta — Exportkoordination. Santa Cruz de la Sierra, Bolivien."
+  },
+  "meta": {
+    "siteName": "Terra Preta",
+    "titleSuffix": "Premium Gefriergetrocknetes Açaí-Pulver",
+    "defaultDescription": "Terra Preta verbindet europäische Käufer mit zertifizierten Gefriertrocknungs-Produzenten von Açaí im bolivianischen Amazonasgebiet. Wir koordinieren die Logistik von der Ernte bis zum Export und verwalten die Überprüfung der Bio-Zertifizierungen — damit Sie konformes, Premium-Açaí-Pulver ohne die Navigation durch komplexe Lieferketten erhalten. USDA NOP und EU-Bio zertifiziert.",
+    "ogTitle": "Premium Gefriergetrocknetes Açaí-Pulver — Terra Preta"
+  }
+}

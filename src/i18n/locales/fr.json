@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "howWeWork": "Notre Méthode",
+    "product": "Produit",
+    "origin": "Origine",
+    "certifications": "Certifications",
+    "export": "Exportation",
+    "trust": "Confiance",
+    "contact": "Contact",
+    "skipToContent": "Aller au contenu",
+    "menuToggle": "Ouvrir le menu de navigation",
+    "logoTagline": "Superaliments Amazoniens"
+  },
+  "hero": {
+    "title": "Açaí Amazonien, Normes Européennes",
+    "subtitle": "Terra Preta connecte les acheteurs européens aux producteurs certifiés d'açaí lyophilisé dans l'Amazonie bolivienne. Nous coordonnons la logistique de la récolte à l'exportation et la vérification des certifications biologiques — pour que vous receviez une poudre d'açaí premium et conforme, sans la complexité de la chaîne d'approvisionnement.",
+    "ctaPrimary": "Disponibilité et Tarifs",
+    "ctaSecondary": "Télécharger la Fiche Produit",
+    "scrollHint": "Défiler",
+    "scrollAriaLabel": "Aller à la section Notre Méthode",
+    "backgroundAlt": "Vue aérienne d'un fleuve de la forêt amazonienne — une canopée verte luxuriante serpentant à travers le paysage"
+  },
+  "howWeWork": {
+    "heading": "Comment Fonctionne Terra Preta",
+    "subheading": "De votre demande à l'expédition — nous coordonnons chaque étape.",
+    "step1Title": "Vos Besoins",
+    "step1Description": "Partagez vos volumes, exigences de certification et délais de livraison.",
+    "step2Title": "Sélection du Producteur",
+    "step2Description": "Nous identifions des producteurs certifiés compétitifs selon la disponibilité saisonnière.",
+    "step3Title": "Vérification et Documentation",
+    "step3Description": "Nous coordonnons la vérification des certifications, les analyses de lots et la documentation d'exportation.",
+    "step4Title": "Exportation et Livraison",
+    "step4Description": "Nous gérons la logistique de la Bolivie jusqu'à votre établissement européen."
+  },
+  "origin": {
+    "heading": "De l'Amazonie à Votre Établissement",
+    "subheading": "Coordonné de la récolte à l'exportation en moins de 100 heures — préservant l'essence de la nature à chaque étape.",
+    "description": "L'açaí sélectionné pour Terra Preta est récolté par des communautés autochtones dans l'Amazonie bolivienne. Le fruit est transformé en purée dans les 24 heures suivant la récolte par des partenaires de transformation certifiés, puis lyophilisé en poudre en moins de 100 heures — préservant une intégrité nutritionnelle maximale.",
+    "paragraph2": "Le palmier <em>Euterpe precatoria</em> récolté à l'état sauvage produit une baie plus petite et plus riche en nutriments que son cousin brésilien cultivé. Poussant dans les plaines inondables biodiverses de la région du Beni, ces palmiers absorbent la richesse du sol amazonien — la <em>terra preta</em> originale qui donne son nom à notre entreprise.",
+    "mapCaption": "Lieux d'approvisionnement indicatifs : Comunidad Buen Retiro · Luz de América · El Porvenir — Riberalta, Beni, Bolivie",
+    "stat1Label": "De la récolte à la poudre",
+    "stat2Label": "Fruit cru = 100g poudre",
+    "stat3Label": "ORAC µmol TE/100g"
+  },
+  "certifications": {
+    "heading": "Bio Certifié, Vérifié avec Transparence",
+    "subheading": "Chaque expédition est accompagnée d'une certification biologique de tiers. Nous vérifions toute la documentation — aucune affirmation sans preuve.",
+    "note": "Les certifications biologiques sont détenues par nos producteurs et partenaires de transformation en Bolivie. Terra Preta coordonne la vérification et fournit toute la documentation nécessaire à la conformité d'importation dans l'UE.",
+    "authorityLabel": "Organisme",
+    "idLabel": "ID",
+    "validUntilLabel": "Valide Jusqu'au",
+    "verifyLinkPrefix": "Vérifier"
+  },
+  "product": {
+    "heading": "Produit Phare : Poudre d'Açaí Lyophilisée",
+    "subheading": "Euterpe precatoria — récolté à l'état sauvage, biologique, lyophilisé pour préserver son profil nutritionnel exceptionnel.",
+    "description": "Poudre d'açaí lyophilisée 100% biologique issue de palmiers <em>Euterpe precatoria</em> récoltés à l'état sauvage dans la région du Beni, en Bolivie. Traité à froid dans les heures suivant la récolte pour préserver une intégrité nutritionnelle maximale, une couleur vibrante et une saveur amazonienne authentique.",
+    "antioxidantLabel": "Puissance Antioxydante",
+    "oracLabel": "ORAC µmol TE/100g",
+    "nutritionHeading": "Profil Nutritionnel (pour 100g)",
+    "particleHeading": "Distribution Granulométrique",
+    "particleCaption": "Distribution de la taille des particules par maille et micron",
+    "meshLabel": "Maille",
+    "micronsLabel": "Microns",
+    "passRateLabel": "Taux de Passage",
+    "packagingHeading": "Conditionnement",
+    "shelfLifeHeading": "Durée de Conservation et Stockage",
+    "shelfLife": "24 mois à compter de la date de production lorsque stocké conformément aux indications",
+    "storageConditions": "Environnement frais et sec (<25°C, <65% HR). Maintenir scellé après ouverture.",
+    "certificationsHeading": "Certifications",
+    "certUSDA": "USDA NOP Biologique",
+    "certEU": "Bio UE (Règlement 2018/848)",
+    "certBolivia": "Bio National Bolivie (Ley 3525/06)"
+  },
+  "export": {
+    "heading": "Prêt à l'Exportation vers l'Europe",
+    "subheading": "Nous gérons la logistique pour que vous n'ayez pas à le faire.",
+    "column1Heading": "Certifié UE",
+    "column1Body": "L'açaí sélectionné par Terra Preta est conforme au Règlement Bio de l'UE 2018/848. Code CN 0813. Prêt à l'importation dans tous les États membres de l'UE.",
+    "column2Heading": "Commandes Flexibles",
+    "column2Body": "Pas de quantité minimale de commande. Renseignez-vous sur la disponibilité saisonnière et les tarifs en vigueur. Nous nous adaptons à vos besoins en volume.",
+    "column3Heading": "Qualité Vérifiée à la Source",
+    "column3Body": "Nous coordonnons avec des producteurs et transformateurs certifiés à Santa Cruz, en Bolivie. La sélection des producteurs repose sur la qualité compétitive et la disponibilité saisonnière. Documentation complète de traçabilité de la récolte à l'exportation.",
+    "ctaButton": "Disponibilité et Tarifs"
+  },
+  "socialProof": {
+    "heading": "La Confiance des Leaders de l'Industrie",
+    "subheading": "Témoignages d'acheteurs, bientôt disponibles.",
+    "fallbackTitle": "Partenariats à Venir",
+    "fallbackDescription": "Terra Preta est une nouvelle entreprise d'exportation fondée sur des décennies d'expertise dans la chaîne d'approvisionnement amazonienne et la conformité réglementaire. Au fur et à mesure que nos premiers partenaires européens nous rejoindront, leurs témoignages apparaîtront ici."
+  },
+  "contact": {
+    "heading": "Parlons Açaí",
+    "subheading": "Renseignez-vous sur le stock saisonnier, demandez des échantillons ou discutez de vos besoins.",
+    "whatsapp": "WhatsApp",
+    "whatsappAriaLabel": "Discuter avec Carlos sur WhatsApp",
+    "email": "E-mail",
+    "emailAriaLabel": "Nous envoyer un e-mail",
+    "location": "Localisation",
+    "contactName": "Carlos Gómez",
+    "locationCity": "Santa Cruz de la Sierra",
+    "locationCountry": "Bolivie",
+    "responseTime": "Nous répondons généralement sous 24 heures.",
+    "downloadDatasheet": "Fiche Technique du Produit (PDF)",
+    "downloadCertificate": "Certificat USDA NOP (PDF)"
+  },
+  "footer": {
+    "quickLinks": "Liens Rapides",
+    "contact": "Contact",
+    "whatsapp": "WhatsApp",
+    "location": "Santa Cruz de la Sierra, Bolivie",
+    "copyright": "Tous droits réservés.",
+    "copyrightCert": "Certifié USDA NOP et Bio UE.",
+    "locationLine": "Terra Preta — Coordination d'exportation. Santa Cruz de la Sierra, Bolivie."
+  },
+  "meta": {
+    "siteName": "Terra Preta",
+    "titleSuffix": "Poudre d'Açaí Lyophilisée Premium",
+    "defaultDescription": "Terra Preta connecte les acheteurs européens aux producteurs certifiés d'açaí lyophilisé dans l'Amazonie bolivienne. Nous coordonnons la logistique de la récolte à l'exportation et gérons la vérification des certifications biologiques — pour que vous receviez une poudre d'açaí premium et conforme sans avoir à gérer des chaînes d'approvisionnement complexes. Certifié USDA NOP et Bio UE.",
+    "ogTitle": "Poudre d'Açaí Lyophilisée Premium — Terra Preta"
+  }
+}
